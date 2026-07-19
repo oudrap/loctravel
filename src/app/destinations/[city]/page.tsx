@@ -10,6 +10,7 @@ import JsonLd, {
   generateTravelGuideSchema,
 } from "@/components/layout/JsonLd";
 import WeatherCard from "@/components/ui/WeatherCard";
+import NewsletterSection from "@/components/ui/NewsletterSection";
 import { getCityWeather } from "@/lib/weather";
 
 interface Props {
@@ -80,13 +81,13 @@ export default async function CityGuidePage({ params }: Props) {
 
   return (
     <article className="pb-24">
-      {/* Dynamic JSON-LD Schemas for SEO */}
+      {/* 17. SEO-optimized FAQ & Travel Schemas (Injected in HTML head/body) */}
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={travelGuideSchema} />
 
-      {/* 1. Hero Header */}
-      <section className="relative h-[60vh] min-h-[400px] bg-slate-950 flex items-end">
+      {/* 1. Hero Section */}
+      <section className="relative h-[65vh] min-h-[450px] bg-slate-950 flex items-end">
         <div className="absolute inset-0 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -94,10 +95,10 @@ export default async function CityGuidePage({ params }: Props) {
             alt={city.name}
             className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12 z-10 space-y-4">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12 z-10 space-y-6">
           <nav className="text-xs font-semibold text-slate-300 flex items-center gap-2">
             <Link href="/destinations" className="hover:text-white transition-colors">Destinations</Link>
             <span>/</span>
@@ -105,29 +106,50 @@ export default async function CityGuidePage({ params }: Props) {
             <span>/</span>
             <span className="text-emerald-400">{city.name}</span>
           </nav>
-          <div className="space-y-1">
+
+          <div className="space-y-2 max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-              {city.country}
+              {city.country} • Local Travel Guide
             </span>
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-              {city.name} <span className="text-emerald-500 font-normal">Local Guide</span>
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight font-display">
+              {city.name}
             </h1>
+            <p className="text-lg sm:text-xl text-slate-200 font-light">
+              {city.tagline}
+            </p>
           </div>
-          <p className="text-lg text-slate-200 font-light max-w-2xl">
-            {city.tagline}
-          </p>
+
+          {/* Quick Facts Banner */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 max-w-4xl text-xs">
+            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Currency</span>
+              <span className="font-semibold text-white">{city.currency || "Local Currency"}</span>
+            </div>
+            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Language</span>
+              <span className="font-semibold text-white">{city.language || "Local Language"}</span>
+            </div>
+            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Best Season</span>
+              <span className="font-semibold text-white truncate block">{city.bestTimeToVisit.season.split("&")[0]}</span>
+            </div>
+            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Timezone</span>
+              <span className="font-semibold text-white">{city.timezone || "Local Time"}</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 2. Main Content Grid */}
+      {/* Main Content Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Main Body */}
+          {/* Main Body Column */}
           <div className="lg:col-span-8 space-y-16">
             
             {/* Overview */}
             <section id="overview" className="space-y-6">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
                 Overview
               </h2>
               <div className="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed font-light text-base md:text-lg">
@@ -139,48 +161,152 @@ export default async function CityGuidePage({ params }: Props) {
 
             <AdSenseSlot slot="city-below-overview" />
 
-            {/* Weather & Climate */}
-            <section id="weather">
+            {/* 2. Live Weather Section */}
+            <section id="live-weather">
               <WeatherCard
                 weather={weather}
                 cityName={city.name}
               />
             </section>
 
-            {/* Top Attractions */}
+            {/* 3. Best Time to Visit */}
+            <section id="best-time" className="p-8 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📅</span>
+                <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white font-display">
+                  Best Time to Visit
+                </h2>
+              </div>
+              <p className="text-slate-800 dark:text-slate-200 font-semibold text-lg">
+                {city.bestTimeToVisit.season}
+              </p>
+              <p className="text-slate-600 dark:text-slate-400 font-light text-sm md:text-base leading-relaxed">
+                {city.bestTimeToVisit.description}
+              </p>
+              <div className="pt-3 border-t border-emerald-500/10 text-xs text-emerald-700 dark:text-emerald-400 font-mono">
+                Weather & Climate Details: {city.bestTimeToVisit.weatherDetails}
+              </div>
+            </section>
+
+            {/* 4. Top Attractions */}
             <section id="attractions" className="space-y-8">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
                 Top Attractions
               </h2>
               <div className="grid grid-cols-1 gap-8">
-                {city.attractions.map((att, idx) => (
+                {city.attractions.map((attraction, index) => (
                   <div
-                    key={idx}
-                    className="flex flex-col md:flex-row bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                    key={index}
+                    className="flex flex-col sm:flex-row gap-6 p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="md:w-2/5 relative h-56 md:h-auto min-h-[220px] bg-slate-100 dark:bg-slate-950">
+                    <div className="sm:w-1/3 h-48 sm:h-auto relative rounded-2xl overflow-hidden shrink-0">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={att.image}
-                        alt={att.name}
+                        src={attraction.image}
+                        alt={attraction.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <span className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/10 uppercase">
+                        {attraction.type}
+                      </span>
+                    </div>
+
+                    <div className="sm:w-2/3 space-y-3 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                          {attraction.name}
+                        </h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                          {attraction.description}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center justify-between text-xs font-mono pt-3 border-t border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                        <span>⏱️ {attraction.duration}</span>
+                        <span className="font-bold text-emerald-600 dark:text-emerald-400">{attraction.cost}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 5. Things to Do */}
+            <section id="things-to-do" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Things to Do
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {(city.thingsToDo || [
+                  {
+                    title: "Walk Historic Districts",
+                    description: "Explore narrow cobblestone alleyways, historic architecture, and local artisan shops.",
+                    duration: "2-3 hours",
+                    cost: "Free"
+                  },
+                  {
+                    title: "Local Market Tasting",
+                    description: "Visit traditional neighborhood markets to sample fresh local produce and seasonal snacks.",
+                    duration: "1.5 hours",
+                    cost: "Budget-friendly"
+                  },
+                  {
+                    title: "Sunset Viewpoint Stroll",
+                    description: "Catch panoramic city views from hilltop parks and public terraces as lights come on.",
+                    duration: "1 hour",
+                    cost: "Free"
+                  }
+                ]).map((item, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3"
+                  >
+                    <div className="text-emerald-500 font-bold text-lg">0{index + 1}.</div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">{item.title}</h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                    <div className="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between text-[11px] font-mono text-slate-400">
+                      <span>{item.duration}</span>
+                      <span className="text-emerald-600 dark:text-emerald-400 font-semibold">{item.cost}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <AdSenseSlot slot="city-middle-content" />
+
+            {/* 6. Local Food */}
+            <section id="food" className="space-y-8">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Local Food & Culinary Scene
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {city.food.map((dish, index) => (
+                  <div
+                    key={index}
+                    className="rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col"
+                  >
+                    <div className="h-48 relative">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={dish.image}
+                        alt={dish.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="md:w-3/5 p-6 flex flex-col justify-between space-y-4">
+                    <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                       <div className="space-y-2">
-                        <span className="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
-                          {att.type}
-                        </span>
-                        <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">
-                          {att.name}
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                          {dish.name}
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm font-light leading-relaxed">
-                          {att.description}
+                        <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                          {dish.description}
                         </p>
                       </div>
-                      <div className="flex gap-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 text-xs text-slate-500 dark:text-slate-400 font-mono">
-                        <div>⏱️ {att.duration}</div>
-                        <div>🎟️ {att.cost}</div>
+                      <div className="p-3 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 text-xs text-emerald-800 dark:text-emerald-300">
+                        <span className="font-bold">Local Tip:</span> {dish.recommendation}
                       </div>
                     </div>
                   </div>
@@ -188,225 +314,329 @@ export default async function CityGuidePage({ params }: Props) {
               </div>
             </section>
 
-            <AdSenseSlot slot="city-middle" />
-
-            {/* Local Food */}
-            <section id="food" className="space-y-8">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
-                Local Food & Flavors
+            {/* 7. Where to Stay (Hotels & Areas) */}
+            <section id="where-to-stay" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Where to Stay in {city.name}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {city.food.map((dish, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {(city.whereToStay || [
+                  {
+                    area: "City Center / Old Town",
+                    description: "Historic heart of the city within easy walking distance to main sights and landmarks.",
+                    priceRange: "$$ - $$$ (Mid-Range & Luxury)",
+                    recommendation: "Perfect for first-time visitors who want central location and easy transit."
+                  },
+                  {
+                    area: "Arts & Boutique Quarter",
+                    description: "Charming neighborhood lined with independent cafes, art galleries, and historic homestays.",
+                    priceRange: "$$ (Boutique & Mid-Range)",
+                    recommendation: "Great for culture enthusiasts and couples seeking romantic charm."
+                  },
+                  {
+                    area: "Outer Transit Belt",
+                    description: "Quiet residential neighborhood near metro stations with affordable budget hotels.",
+                    priceRange: "$ (Budget-Friendly)",
+                    recommendation: "Ideal for budget travelers and longer stays."
+                  }
+                ]).map((stay, index) => (
                   <div
-                    key={idx}
-                    className="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-5 flex flex-col justify-between gap-4"
+                    key={index}
+                    className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 flex flex-col justify-between"
                   >
-                    <div className="space-y-3">
-                      {dish.image && (
-                        <div className="h-40 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-950">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={dish.image}
-                            alt={dish.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      )}
-                      <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100">
-                        {dish.name}
-                      </h3>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm font-light leading-relaxed">
-                        {dish.description}
-                      </p>
-                    </div>
-                    <div className="bg-slate-50 dark:bg-slate-950 p-3.5 rounded-xl text-xs text-emerald-800 dark:text-emerald-400 leading-normal font-light">
-                      💡 <strong>Where to try:</strong> {dish.recommendation}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Hidden Gems */}
-            <section id="gems" className="space-y-8">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
-                Hidden Gems & Local Secrets
-              </h2>
-              <div className="space-y-6">
-                {city.hiddenGems.map((gem, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 bg-slate-900 text-white rounded-3xl relative overflow-hidden flex flex-col md:flex-row gap-6 items-center shadow-xl"
-                  >
-                    <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-[80px]" />
-                    
-                    {gem.image && (
-                      <div className="w-full md:w-1/3 h-44 rounded-2xl overflow-hidden bg-slate-950 flex-shrink-0">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={gem.image}
-                          alt={gem.name}
-                          className="w-full h-full object-cover opacity-85"
-                        />
-                      </div>
-                    )}
-                    <div className="space-y-2 relative z-10 w-full md:w-2/3">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">
-                        Insiders Secret
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                        {stay.priceRange}
                       </span>
-                      <h3 className="font-extrabold text-xl text-white">
-                        {gem.name}
-                      </h3>
-                      <p className="text-slate-300 text-sm font-light leading-relaxed">
-                        {gem.description}
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-1">{stay.area}</h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                        {stay.description}
                       </p>
-                      <div className="pt-2 text-xs text-emerald-300 italic font-light">
-                        ✨ <strong>Local Tip:</strong> {gem.tip}
-                      </div>
+                    </div>
+                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 italic">
+                      {stay.recommendation}
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Practical Advice */}
-            <section id="practical" className="space-y-8">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
-                Practical Survival Guide
+            {/* 8. Best Restaurants */}
+            <section id="best-restaurants" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Best Restaurants & Local Eats
               </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Transportation */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-                    🚇 Transportation & Transit
-                  </h3>
-                  <div className="space-y-3">
-                    {city.transportation.map((opt, idx) => (
-                      <div key={idx} className="p-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-xl space-y-1">
-                        <div className="font-semibold text-sm flex justify-between">
-                          <span>{opt.type}</span>
-                          <span className="text-emerald-600 dark:text-emerald-400 text-xs font-mono">{opt.cost}</span>
-                        </div>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 font-light">{opt.description}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {(city.bestRestaurants || [
+                  {
+                    name: `Central ${city.name} Bistro`,
+                    cuisine: "Authentic Local Cuisine",
+                    description: "Renowned neighborhood eatery serving freshly prepared traditional regional dishes.",
+                    location: "Central District",
+                    priceRange: "€€ - €€€"
+                  },
+                  {
+                    name: "Old Town Market Hall",
+                    cuisine: "Street Food & Artisanal Snacks",
+                    description: "Vibrant indoor market food hall featuring multiple local culinary stalls.",
+                    location: "Historic Quarter",
+                    priceRange: "€ - €€"
+                  },
+                  {
+                    name: "Panoramic Rooftop Dining",
+                    cuisine: "Modern Fusion & Drinks",
+                    description: "Scenic dining spot overlooking the skyline, perfect for sunset meals.",
+                    location: "Harbor / High Rise District",
+                    priceRange: "€€€"
+                  }
+                ]).map((restaurant, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-3 flex flex-col justify-between"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                          {restaurant.cuisine}
+                        </span>
+                        <span className="text-xs font-bold text-slate-300 font-mono">{restaurant.priceRange}</span>
                       </div>
-                    ))}
+                      <h3 className="text-lg font-bold text-white pt-1">{restaurant.name}</h3>
+                      <p className="text-xs text-slate-300 font-light leading-relaxed">
+                        {restaurant.description}
+                      </p>
+                    </div>
+                    <div className="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800">
+                      📍 {restaurant.location}
+                    </div>
                   </div>
-                </div>
-
-                {/* Budget Tips */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-                    💵 Budget Hacks
-                  </h3>
-                  <div className="space-y-3">
-                    {city.budgetTips.map((tip, idx) => (
-                      <div key={idx} className="p-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-xl space-y-1">
-                        <div className="font-semibold text-sm text-slate-800 dark:text-slate-100">{tip.title}</div>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">{tip.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
+            </section>
 
-              {/* Safety Tips */}
-              <div className="p-6 bg-red-500/5 border border-red-500/10 rounded-3xl space-y-4 mt-6">
-                <h3 className="text-lg font-bold text-red-600 dark:text-red-400 flex items-center gap-2">
-                  🛡️ Safety & Local Scams
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {city.safetyTips.map((tip, idx) => (
-                    <div key={idx} className="space-y-1">
-                      <div className="font-semibold text-sm text-slate-800 dark:text-slate-200">{tip.title}</div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">{tip.description}</p>
+            {/* 9. Transportation Guide */}
+            <section id="transportation" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Transportation Guide
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {city.transportation.map((option, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3"
+                  >
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      {option.type}
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                      {option.description}
+                    </p>
+                    <div className="pt-2 border-t border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-900 dark:text-white">
+                      Cost: {option.cost}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 10. Budget & Daily Costs */}
+            <section id="budget" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Budget & Daily Expenses
+              </h2>
+              <div className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {city.budgetTips.map((tip, index) => (
+                    <div key={index} className="space-y-2">
+                      <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        <span className="text-emerald-500">💡</span> {tip.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                        {tip.description}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            <AdSenseSlot slot="city-above-faq" />
+            {/* 11. Safety Tips */}
+            <section id="safety" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Safety Tips & Scams to Avoid
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {city.safetyTips.map((tip, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-3xl bg-amber-500/5 border border-amber-500/20 space-y-3"
+                  >
+                    <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                      <span>⚠️</span> {tip.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                      {tip.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-            {/* FAQ */}
-            <section id="faq" className="space-y-8">
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
+            {/* 12. Local Etiquette & Culture */}
+            <section id="local-etiquette" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Local Etiquette & Customs
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {(city.localEtiquette || [
+                  {
+                    title: "Greetings & Mannerisms",
+                    description: "Learn basic polite phrases in the local language to greet shop owners and restaurant staff."
+                  },
+                  {
+                    title: "Tipping Etiquette",
+                    description: "Check bill policy; service charge is often included. Leaving small extra tips is appreciated."
+                  },
+                  {
+                    title: "Public Etiquette",
+                    description: "Respect local customs, keep noise levels moderate on public transit, and dress appropriately for sacred sites."
+                  }
+                ]).map((item, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 space-y-2"
+                  >
+                    <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                      <span>🤝</span> {item.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 13. Hidden Gems */}
+            <section id="hidden-gems" className="space-y-8">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                Hidden Gems & Local Secrets
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {city.hiddenGems.map((gem, index) => (
+                  <div
+                    key={index}
+                    className="rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col"
+                  >
+                    <div className="h-48 relative">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={gem.image}
+                        alt={gem.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <span className="absolute top-3 left-3 bg-emerald-500 text-slate-950 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                        Hidden Gem
+                      </span>
+                    </div>
+                    <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                          {gem.name}
+                        </h3>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                          {gem.description}
+                        </p>
+                      </div>
+                      <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800/80 text-xs text-slate-700 dark:text-slate-300 font-mono">
+                        <span className="font-bold text-emerald-600 dark:text-emerald-400">Insider Tip:</span> {gem.tip}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 14. Frequently Asked Questions */}
+            <section id="faq" className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
                 Frequently Asked Questions
               </h2>
               <Accordion items={city.faq} />
             </section>
 
-            {/* Related Destinations */}
-            <section id="related" className="space-y-8 pt-8 border-t border-slate-200 dark:border-slate-800">
-              <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">
-                Related Destinations
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {relatedCities.map((rel) => (
-                  <Link
-                    key={rel.slug}
-                    href={`/destinations/${rel.slug}`}
-                    className="group bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
-                  >
-                    <div className="relative h-36 w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={rel.heroImage}
-                        alt={rel.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-4 space-y-1">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase">{rel.country}</span>
-                      <h3 className="font-bold text-base text-slate-800 dark:text-slate-100 group-hover:text-emerald-500 transition-colors">
-                        {rel.name}
-                      </h3>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            {/* 16. Newsletter CTA */}
+            <section id="newsletter-cta">
+              <NewsletterSection />
             </section>
 
           </div>
 
-          {/* Sidebar / Quick Facts */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="sticky top-28 p-6 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-3xl shadow-sm space-y-6">
-              <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100">
-                Quick Facts
-              </h3>
+          {/* Sidebar Column */}
+          <aside className="lg:col-span-4 space-y-8">
+            <div className="sticky top-28 space-y-8">
               
-              <ul className="space-y-4 text-sm">
-                <li className="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800/60">
-                  <span className="text-slate-500">Country</span>
-                  <span className="font-semibold">{city.country}</span>
-                </li>
-                <li className="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800/60">
-                  <span className="text-slate-500">Region</span>
-                  <span className="font-semibold">{city.region}</span>
-                </li>
-                <li className="flex justify-between py-2 border-b border-slate-100 dark:border-slate-800/60">
-                  <span className="text-slate-500">Best Season</span>
-                  <span className="font-semibold text-right max-w-[180px]">{city.bestTimeToVisit.season.split('(')[0]}</span>
-                </li>
-              </ul>
-
-              <div className="p-4 bg-slate-50 dark:bg-slate-950 rounded-2xl text-center space-y-2">
-                <div className="text-[10px] text-slate-400 font-mono">ADVERTISEMENT SLOT</div>
-                <ins
-                  className="adsbygoogle"
-                  style={{ display: "block" }}
-                  data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-placeholder"}
-                  data-ad-slot="city-sidebar"
-                  data-ad-format="rectangle"
-                />
+              {/* Quick Navigation Box */}
+              <div className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-4">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-400 font-mono">
+                  Quick Navigation
+                </h3>
+                <ul className="space-y-2 text-xs text-slate-300 font-medium">
+                  <li><a href="#overview" className="hover:text-emerald-400 transition-colors">• Overview</a></li>
+                  <li><a href="#live-weather" className="hover:text-emerald-400 transition-colors">• Live Weather</a></li>
+                  <li><a href="#best-time" className="hover:text-emerald-400 transition-colors">• Best Time to Visit</a></li>
+                  <li><a href="#attractions" className="hover:text-emerald-400 transition-colors">• Top Attractions</a></li>
+                  <li><a href="#things-to-do" className="hover:text-emerald-400 transition-colors">• Things to Do</a></li>
+                  <li><a href="#food" className="hover:text-emerald-400 transition-colors">• Local Food</a></li>
+                  <li><a href="#where-to-stay" className="hover:text-emerald-400 transition-colors">• Where to Stay</a></li>
+                  <li><a href="#best-restaurants" className="hover:text-emerald-400 transition-colors">• Best Restaurants</a></li>
+                  <li><a href="#transportation" className="hover:text-emerald-400 transition-colors">• Transportation Guide</a></li>
+                  <li><a href="#budget" className="hover:text-emerald-400 transition-colors">• Budget & Daily Costs</a></li>
+                  <li><a href="#safety" className="hover:text-emerald-400 transition-colors">• Safety Tips</a></li>
+                  <li><a href="#local-etiquette" className="hover:text-emerald-400 transition-colors">• Local Etiquette</a></li>
+                  <li><a href="#hidden-gems" className="hover:text-emerald-400 transition-colors">• Hidden Gems</a></li>
+                  <li><a href="#faq" className="hover:text-emerald-400 transition-colors">• FAQ</a></li>
+                </ul>
               </div>
 
-              <div className="pt-2 text-xs text-center text-slate-400 dark:text-slate-600 leading-relaxed">
-                All guides on LocTravel are updated monthly by local experts.
+              {/* Sidebar AdSense Placement */}
+              <AdSenseSlot slot="city-sidebar" />
+
+              {/* 15. Related Destinations */}
+              <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">
+                  Related Destinations
+                </h3>
+                <div className="space-y-4">
+                  {relatedCities.map((relCity) => (
+                    <Link
+                      key={relCity.slug}
+                      href={`/destinations/${relCity.slug}`}
+                      className="group flex items-center gap-4 p-2.5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                    >
+                      <div className="w-16 h-16 rounded-xl overflow-hidden relative shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={relCity.heroImage}
+                          alt={relCity.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                          {relCity.name}
+                        </h4>
+                        <span className="text-[10px] font-mono text-slate-400">
+                          {relCity.country}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
+
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </article>

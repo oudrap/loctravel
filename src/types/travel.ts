@@ -12,11 +12,33 @@ export interface Attraction {
   type: string;
 }
 
+export interface ThingToDo {
+  title: string;
+  description: string;
+  duration: string;
+  cost: string;
+}
+
 export interface FoodItem {
   name: string;
   image: string;
   description: string;
   recommendation: string;
+}
+
+export interface Accommodation {
+  area: string;
+  description: string;
+  priceRange: string; // e.g. "$$ (Budget-Friendly)" or "$$$ (Boutique & Luxury)"
+  recommendation: string;
+}
+
+export interface Restaurant {
+  name: string;
+  cuisine: string;
+  description: string;
+  location: string;
+  priceRange: string;
 }
 
 export interface HiddenGem {
@@ -42,6 +64,11 @@ export interface SafetyTip {
   description: string;
 }
 
+export interface EtiquetteTip {
+  title: string;
+  description: string;
+}
+
 export interface City {
   slug: string;
   name: string;
@@ -55,6 +82,11 @@ export interface City {
   lat?: number;
   lon?: number;
   
+  // Quick Facts
+  currency?: string;
+  language?: string;
+  timezone?: string;
+
   // Sections
   overview: string[];
   bestTimeToVisit: {
@@ -63,11 +95,15 @@ export interface City {
     weatherDetails: string;
   };
   attractions: Attraction[];
+  thingsToDo?: ThingToDo[];
   food: FoodItem[];
-  hiddenGems: HiddenGem[];
-  budgetTips: BudgetTip[];
+  whereToStay?: Accommodation[];
+  bestRestaurants?: Restaurant[];
   transportation: TransportationOption[];
+  budgetTips: BudgetTip[];
   safetyTips: SafetyTip[];
+  localEtiquette?: EtiquetteTip[];
+  hiddenGems: HiddenGem[];
   faq: FAQItem[];
 }
 
@@ -75,7 +111,7 @@ export interface BlogArticle {
   slug: string;
   title: string;
   excerpt: string;
-  content: string; // HTML format preferred for content rendering
+  content: string;
   image: string;
   date: string;
   author: string;

@@ -13,6 +13,10 @@ export const parisData: City = {
   lat: 48.8566,
   lon: 2.3522,
   
+  currency: "Euro (€)",
+  language: "French",
+  timezone: "CET (UTC+1 / UTC+2 in summer)",
+  
   overview: [
     "Paris, the capital of France, is a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond landmarks like the Eiffel Tower and the Gothic 12th-century Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
     "But to truly experience Paris, you must step off the beaten tourist path. Spend a morning sitting at a corner bistro in the Canal Saint-Martin, walk through the historic covered passages, and watch the sun set from the steps of Belleville. This guide will show you how to experience Paris with the intimacy of a local."
@@ -44,10 +48,31 @@ export const parisData: City = {
     {
       name: "Sainte-Chapelle",
       image: "https://images.unsplash.com/photo-1548678957-f6c61f4ad675?auto=format&fit=crop&w=600&q=80",
-      description: "A 13th-century royal chapel with breath-taking Gothic stained glass windows that depict over 1,113 biblical scenes.",
+      description: "A 13th-century royal chapel with breath-taking Gothic stained glass windows depicting 1,113 biblical scenes.",
       duration: "1 hour",
       cost: "€13",
       type: "Architecture"
+    }
+  ],
+
+  thingsToDo: [
+    {
+      title: "Sunset Picnic at Canal Saint-Martin",
+      description: "Grab a fresh baguette, artisan cheese, and a bottle of wine from local shops and join locals along the canal banks.",
+      duration: "2-3 hours",
+      cost: "€10 - €15"
+    },
+    {
+      title: "Stroll Through Montmartre & Place du Tertre",
+      description: "Explore the bohemian cobblestone streets where Picasso worked, and watch street artists paint in the square.",
+      duration: "2 hours",
+      cost: "Free"
+    },
+    {
+      title: "Browse Shakespeare and Company Bookstore",
+      description: "Visit the world-famous English language bookstore on the Left Bank, frequented by Hemingway and Fitzgerald.",
+      duration: "1 hour",
+      cost: "Free to browse"
     }
   ],
   
@@ -62,13 +87,58 @@ export const parisData: City = {
       name: "Confit de Canard (Duck Confit)",
       image: "https://images.unsplash.com/photo-1514944224746-6bba5b09e5c2?auto=format&fit=crop&w=600&q=80",
       description: "Slow-cooked duck leg with crispy skin and tender, flavorful meat, served with garlic potatoes.",
-      recommendation: "Order it at Chez Gladines in Butte-aux-Cailles for an authentic, hearty Basque-Parisian meal."
+      recommendation: "Order it at Chez Gladines in Butte-aux-Cailles for an authentic Basque-Parisian meal."
     },
     {
       name: "Artisanal French Cheese",
       image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=600&q=80",
       description: "From creamy Brie and Camembert to sharp Roquefort and aged Comté.",
       recommendation: "Visit Laurent Dubois cheesemonger in Saint-Germain-des-Prés for an expert selection."
+    }
+  ],
+
+  whereToStay: [
+    {
+      area: "Le Marais (3rd & 4th Arrondissements)",
+      description: "Historic neighborhood filled with trendy boutiques, art galleries, cafes, and historic mansions.",
+      priceRange: "$$ - $$$ (Boutique & Mid-Range)",
+      recommendation: "Ideal for first-time visitors who want a central, walkable, and vibrant atmosphere."
+    },
+    {
+      area: "Saint-Germain-des-Prés (6th Arrondissement)",
+      description: "The classic literary Left Bank neighborhood, elegant, quiet at night, and steps from the Jardin du Luxembourg.",
+      priceRange: "$$$ (Upscale & Luxury)",
+      recommendation: "Perfect for travelers seeking classic Parisian elegance and quiet luxury."
+    },
+    {
+      area: "Bastille & Canal Saint-Martin (10th & 11th)",
+      description: "Youthful, creative, and energetic neighborhoods with fantastic local restaurants and vibrant nightlife.",
+      priceRange: "$ - $$ (Budget & Mid-Range)",
+      recommendation: "Great for budget travelers, foodies, and younger visitors."
+    }
+  ],
+
+  bestRestaurants: [
+    {
+      name: "Bistrot Paul Bert",
+      cuisine: "Classic French Bistro",
+      description: "Famous for steak frites, duck terrine, and traditional grand-mom desserts in an authentic vintage setting.",
+      location: "11th Arrondissement",
+      priceRange: "€€€ (€40 - €60 per person)"
+    },
+    {
+      name: "Bouillon Chartier",
+      cuisine: "Traditional French Comfort Food",
+      description: "Historic 1896 dining hall serving simple, delicious French classics at remarkably low prices.",
+      location: "9th Arrondissement (Grands Boulevards)",
+      priceRange: "€ (€15 - €25 per person)"
+    },
+    {
+      name: "Chez Janou",
+      cuisine: "Provençal Bistro",
+      description: "Lively spot near Place des Vosges specializing in southern French cooking and famous unlimited chocolate mousse.",
+      location: "3rd Arrondissement (Le Marais)",
+      priceRange: "€€ (€25 - €40 per person)"
     }
   ],
   
@@ -82,8 +152,8 @@ export const parisData: City = {
     {
       name: "La Petite Ceinture",
       image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=600&q=80",
-      description: "An abandoned 19th-century railway line that encircles Paris, now reclaimed by nature and open as a scenic green walkway.",
-      tip: "Access the path in the 15th or 20th arrondissements for a quiet, leafy escape from the city noise."
+      description: "An abandoned 19th-century railway line that encircles Paris, now reclaimed by nature as a scenic green walkway.",
+      tip: "Access the path in the 15th or 20th arrondissements for a quiet, leafy escape from city noise."
     }
   ],
   
@@ -98,7 +168,7 @@ export const parisData: City = {
     },
     {
       title: "Picnic by the Seine",
-      description: "Instead of expensive dinners, grab a fresh baguette, cheese, and a bottle of wine from a supermarket and dine like locals along the Seine or Canal Saint-Martin."
+      description: "Instead of expensive dinners, grab a fresh baguette, cheese, and wine from a supermarket and dine like locals along the Seine."
     }
   ],
   
@@ -127,26 +197,41 @@ export const parisData: City = {
     },
     {
       title: "Avoid the Ring Scam",
-      description: "If someone 'finds' a gold ring on the ground in front of you and offers it to you, keep walking. It's a scam to demand money."
+      description: "If someone 'finds' a gold ring on the ground in front of you and offers it to you, keep walking. It is a scam to demand money."
     },
     {
-      title: "Know the Emergency Number",
+      title: "Know Emergency Numbers",
       description: "Call 112 for general emergencies. For medical emergencies specifically, dial 15 (SAMU)."
+    }
+  ],
+
+  localEtiquette: [
+    {
+      title: "Always Say 'Bonjour'",
+      description: "Greeting shopkeepers and waiters with 'Bonjour' (or 'Bonsoir' in the evening) before asking a question is mandatory etiquette in France."
+    },
+    {
+      title: "Tipping Culture",
+      description: "Service charge (service compris) is included in restaurant bills by law. Leaving an extra €1 - €2 for good service is appreciated but optional."
+    },
+    {
+      title: "Keep Voice Volume Moderate",
+      description: "Parisians tend to speak quietly in public spaces, metro cars, and cafes. Avoid loud shouting."
     }
   ],
   
   faq: [
     {
       question: "Do I need to speak French to visit Paris?",
-      answer: "While many Parisians speak English, especially in tourism, learning a few basic phrases like 'Bonjour' (Hello), 'S'il vous plaît' (Please), and 'Merci' (Thank you) will go a long way in ensuring friendly service."
+      answer: "While many Parisians speak English, especially in tourism, learning basic phrases like 'Bonjour' (Hello), 'S'il vous plaît' (Please), and 'Merci' (Thank you) ensures friendly service."
     },
     {
       question: "Is water free in Parisian restaurants?",
-      answer: "Yes. By law, restaurants must provide a free carafe of tap water ('une carafe d'eau') if you request it. Avoid paying for bottled water unless you prefer sparkling."
+      answer: "Yes. By law, restaurants must provide a free carafe of tap water ('une carafe d'eau') if requested. Avoid paying for bottled water unless preferred."
     },
     {
       question: "How do I avoid long lines at attractions?",
-      answer: "Always book time-slot tickets online weeks in advance for the Louvre, Eiffel Tower, and Catacombs. Alternatively, purchase the Paris Museum Pass if visiting multiple monuments."
+      answer: "Always book time-slot tickets online weeks in advance for the Louvre, Eiffel Tower, and Catacombs. Alternatively, purchase the Paris Museum Pass."
     }
   ]
 };
