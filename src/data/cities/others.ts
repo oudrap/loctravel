@@ -581,6 +581,9 @@ export const baliData: City = {
   seoDescription: "An expert content guide to Bali. Explore Ubud terraces, beach sunsets, local food, scooter rentals, budget tips, and safety guidelines.",
   lat: -8.4095,
   lon: 115.1889,
+  currency: "Indonesian Rupiah (IDR / Rp)",
+  language: "Balinese, Indonesian, English",
+  timezone: "WITA (UTC+8)",
   overview: [
     "Bali is an Indonesian island known for its forested volcanic mountains, iconic rice paddies, beaches, and coral reefs. The island is home to religious sites such as cliffside Uluwatu Temple. To the south, the beachside city of Kuta has lively bars, while Seminyak, Sanur, and Nusa Dua are popular resort towns.",
     "To see the authentic Bali, head away from the southern resort strips. Visit the misty mountain temples in Bedugul, learn about traditional subak irrigation in Jatiluwih, and eat at local warungs where fiery sambal is made fresh daily."
@@ -600,12 +603,49 @@ export const baliData: City = {
       type: "Temple & Culture"
     }
   ],
+  thingsToDo: [
+    {
+      title: "Walk Tegalalang Rice Terraces",
+      description: "Stroll scenic green terraced hills featuring traditional Balinese Subak irrigation systems.",
+      duration: "2 hours",
+      cost: "50,000 IDR"
+    },
+    {
+      title: "Watch Kecak Fire Dance at Sunset",
+      description: "Experience dramatic traditional chant performance on the cliffside of Uluwatu Temple.",
+      duration: "1 hour",
+      cost: "150,000 IDR"
+    }
+  ],
   food: [
     {
-      name: "Nasi Campur",
+      name: "Nasi Campur & Babi Guling",
       image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=600&q=80",
-      description: "A scoop of steamed rice accompanied by small portions of meats, vegetables, peanuts, eggs, and spicy sambal.",
-      recommendation: "Try it at Warung Makan Teges in Ubud for a legendary local taste."
+      description: "Steamed rice with pork, chicken, spiced satay, peanuts, fried shallots, and spicy sambal.",
+      recommendation: "Try Warung Makan Teges in Ubud or Warung Ibu Oka for Babi Guling."
+    }
+  ],
+  whereToStay: [
+    {
+      area: "Ubud Arts Center",
+      description: "Lush jungle, wellness retreats, rice paddy views, and artistic artisan markets.",
+      priceRange: "$$ - $$$ (Retreats & Villas)",
+      recommendation: "Best for culture, wellness, and scenic tranquility."
+    },
+    {
+      area: "Canggu & Uluwatu",
+      description: "Vibrant coastal surf hubs filled with trendy beach clubs, sunset bars, and cafes.",
+      priceRange: "$$ - $$$ (Surf & Luxury)",
+      recommendation: "Best for surfing, nightlife, and young travelers."
+    }
+  ],
+  bestRestaurants: [
+    {
+      name: "Warung Local Canggu",
+      cuisine: "Authentic Indonesian Buffet",
+      description: "Popular local warung serving freshly prepared Nasi Campur dishes at budget prices.",
+      location: "Canggu",
+      priceRange: "30,000 - 70,000 IDR per person"
     }
   ],
   hiddenGems: [
@@ -624,15 +664,21 @@ export const baliData: City = {
   ],
   transportation: [
     {
-      type: "Scooter (Motorbike)",
-      description: "The most popular way to get around. Only rent one if you are an experienced rider with an international license.",
-      cost: "approx. 70,000 - 100,000 IDR per day"
+      type: "Scooter (Motorbike) & Gojek App",
+      description: "Motorbikes navigate traffic fast. Use Gojek or Grab ride hailing apps for cheap motor taxi rides.",
+      cost: "approx. 70,000 - 100,000 IDR per day rental"
     }
   ],
   safetyTips: [
     {
       title: "Practice Scooter Safety",
       description: "Always wear a helmet, do not drive in swimwear, and watch out for potholes and erratic traffic."
+    }
+  ],
+  localEtiquette: [
+    {
+      title: "Temple Sarong Etiquette",
+      description: "Always wear a waist sarong and sash when entering sacred Hindu temple grounds."
     }
   ],
   faq: [

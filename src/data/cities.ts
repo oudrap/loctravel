@@ -39,9 +39,33 @@ import {
   losAngelesData,
   kualaLumpurData,
 } from "./cities/newCitiesBatch4";
+import {
+  casablancaData,
+  rabatData,
+  fesData,
+  tangierData,
+  agadirData,
+  chefchaouenData,
+} from "./cities/moroccoCities";
+import {
+  antalyaData,
+  cappadociaData,
+  bursaData,
+  izmirData,
+} from "./cities/turkeyCities";
+import {
+  penangData,
+  langkawiData,
+  jakartaData,
+  yogyakartaData,
+  beijingData,
+  shanghaiData,
+  guangzhouData,
+  shenzhenData,
+} from "./cities/asiaExpansion";
 
 export const cities: City[] = [
-  // Original 10 Cities
+  // Initial Cities
   marrakechData,
   parisData,
   tokyoData,
@@ -53,7 +77,7 @@ export const cities: City[] = [
   istanbulData,
   baliData,
 
-  // 20 New Cities
+  // Batch 1 & 2 & 3 & 4
   singaporeData,
   amsterdamData,
   lisbonData,
@@ -74,6 +98,30 @@ export const cities: City[] = [
   sanFranciscoData,
   losAngelesData,
   kualaLumpurData,
+
+  // Morocco Expansion
+  casablancaData,
+  rabatData,
+  fesData,
+  tangierData,
+  agadirData,
+  chefchaouenData,
+
+  // Turkey Expansion
+  antalyaData,
+  cappadociaData,
+  bursaData,
+  izmirData,
+
+  // Asia Expansion (Malaysia, Indonesia, China)
+  penangData,
+  langkawiData,
+  jakartaData,
+  yogyakartaData,
+  beijingData,
+  shanghaiData,
+  guangzhouData,
+  shenzhenData,
 ];
 
 export function getAllCities(): City[] {
