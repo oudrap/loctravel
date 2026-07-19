@@ -63,6 +63,7 @@ import {
   guangzhouData,
   shenzhenData,
 } from "./cities/asiaExpansion";
+import { meccaData, medinaData } from "./cities/saudiCities";
 
 export const cities: City[] = [
   // Initial Cities
@@ -122,6 +123,10 @@ export const cities: City[] = [
   shanghaiData,
   guangzhouData,
   shenzhenData,
+
+  // Saudi Arabia Collection
+  meccaData,
+  medinaData,
 ];
 
 export function getAllCities(): City[] {
