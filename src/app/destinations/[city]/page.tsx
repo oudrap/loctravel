@@ -166,6 +166,7 @@ export default async function CityGuidePage({ params }: Props) {
               <WeatherCard
                 weather={weather}
                 cityName={city.name}
+                cityTimezone={city.timezone}
               />
             </section>
 

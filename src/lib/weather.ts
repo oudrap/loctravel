@@ -10,6 +10,10 @@ export interface WeatherData {
   sunset: string;
   cityName: string;
   updatedAt: string;
+  timezoneOffset: number; // in seconds from UTC
+  timezoneFormatted: string; // e.g. UTC+9
+  localDateStr: string; // e.g. Monday, Jul 20, 2026
+  localTimeStr: string; // e.g. 14:30
 }
 
 export async function getCityWeather(
@@ -38,18 +42,35 @@ export async function getCityWeather(
 
     const data = await res.json();
 
-    // Format timestamps considering city timezone offset (in seconds)
-    const timezoneOffset = data.timezone || 0; // offset in seconds from UTC
+    // Timezone offset in seconds from UTC
+    const timezoneOffset = data.timezone || 0; 
+    const offsetHours = timezoneOffset / 3600;
+    const timezoneFormatted = `UTC${offsetHours >= 0 ? "+" : ""}${offsetHours}`;
 
-    const formatLocalTime = (timestamp: number) => {
-      const date = new Date((timestamp + timezoneOffset) * 1000);
-      const hours = date.getUTCHours().toString().padStart(2, "0");
-      const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+    const now = new Date();
+    // Calculate city local time using UTC + timezoneOffset
+    const cityLocalDate = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + timezoneOffset * 1000);
+
+    const localDateStr = cityLocalDate.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+    const localTimeStr = cityLocalDate.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    const formatTimeFromTimestamp = (timestamp: number) => {
+      const d = new Date((timestamp + timezoneOffset) * 1000);
+      const hours = d.getUTCHours().toString().padStart(2, "0");
+      const minutes = d.getUTCMinutes().toString().padStart(2, "0");
       return `${hours}:${minutes}`;
     };
 
-    const nowUtcSeconds = Math.floor(Date.now() / 1000);
-    
     return {
       temp: Math.round(data.main.temp),
       feelsLike: Math.round(data.main.feels_like),
@@ -60,10 +81,14 @@ export async function getCityWeather(
         : "",
       humidity: data.main.humidity,
       windSpeedKmH: Math.round(data.wind.speed * 3.6), // convert m/s to km/h
-      sunrise: formatLocalTime(data.sys.sunrise),
-      sunset: formatLocalTime(data.sys.sunset),
+      sunrise: formatTimeFromTimestamp(data.sys.sunrise),
+      sunset: formatTimeFromTimestamp(data.sys.sunset),
       cityName: data.name || cityName || "",
-      updatedAt: formatLocalTime(nowUtcSeconds),
+      updatedAt: localTimeStr,
+      timezoneOffset,
+      timezoneFormatted,
+      localDateStr,
+      localTimeStr,
     };
   } catch (error) {
     console.error(`[OpenWeather API Error]`, error);
