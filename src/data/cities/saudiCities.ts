@@ -54,7 +54,7 @@ export const meccaData: City = {
     },
     {
       name: "The Sacred Kaaba",
-      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80",
       description: "The black silk kiswa-draped cubic sanctuary built by Prophet Ibrahim and Ismail. Pilgrims perform Tawaf by circumambulating seven times anti-clockwise around it.",
       duration: "1 to 2 hours",
       cost: "Free",
