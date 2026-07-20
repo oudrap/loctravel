@@ -46,7 +46,7 @@ export const meccaData: City = {
   attractions: [
     {
       name: "Masjid al-Haram (The Sacred Mosque)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80",
       description: "The largest mosque in the world, capable of accommodating millions of worshippers. It encompasses the Kaaba, Maqam Ibrahim, Safa and Marwa hills, and Zamzam wells.",
       duration: "4 to 6 hours",
       cost: "Free",
@@ -54,7 +54,7 @@ export const meccaData: City = {
     },
     {
       name: "The Sacred Kaaba",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80",
       description: "The black silk kiswa-draped cubic sanctuary built by Prophet Ibrahim and Ismail. Pilgrims perform Tawaf by circumambulating seven times anti-clockwise around it.",
       duration: "1 to 2 hours",
       cost: "Free",
@@ -62,7 +62,7 @@ export const meccaData: City = {
     },
     {
       name: "Abraj Al Bait (Makkah Clock Royal Tower)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&w=800&q=80",
       description: "A 601-meter landmark complex featuring the world's largest clock face, a multi-story shopping mall, astronomy museum, and panoramic viewing decks overlooking the Haram.",
       duration: "2 to 3 hours",
       cost: "Free (Museum fee applies)",
@@ -70,7 +70,7 @@ export const meccaData: City = {
     },
     {
       name: "Jabal Al Noor (Mountain of Light)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=800&q=80",
       description: "Historic 642-meter mountain located 5km northeast of Mecca, famous for housing the Cave of Hira near its peak.",
       duration: "3 hours",
       cost: "Free",
@@ -78,7 +78,7 @@ export const meccaData: City = {
     },
     {
       name: "Cave of Hira",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
       description: "The small cave near the summit of Jabal Al Noor where the Prophet Muhammad spent periods in solitary meditation and received the first Quranic revelation from Archangel Gabriel.",
       duration: "2 hours",
       cost: "Free",
@@ -86,7 +86,7 @@ export const meccaData: City = {
     },
     {
       name: "Jabal Thawr (Thawr Mountain & Cave)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
       description: "The mountain south of Mecca containing the cave where the Prophet Muhammad and Abu Bakr sheltered for three days during their migration (Hijrah) to Medina.",
       duration: "3 hours",
       cost: "Free",
@@ -94,7 +94,7 @@ export const meccaData: City = {
     },
     {
       name: "Mina Valley",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
       description: "The 'City of Tents' located 8km east of Mecca, housing over 100,000 air-conditioned fireproof tents for Hajj pilgrims and the Jamarat pillars.",
       duration: "2 hours",
       cost: "Free",
@@ -102,7 +102,7 @@ export const meccaData: City = {
     },
     {
       name: "Muzdalifah",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
       description: "An open level area between Mina and Arafat where Hajj pilgrims spend the night under the open sky and gather pebbles for Jamarat.",
       duration: "1 to 2 hours",
       cost: "Free",
@@ -110,7 +110,7 @@ export const meccaData: City = {
     },
     {
       name: "Mount Arafat (Jabal al-Rahmah)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
       description: "The granite hill of mercy 20km east of Mecca where the Prophet Muhammad delivered his Farewell Sermon. Standing at Arafat is the central pillar of Hajj.",
       duration: "2 hours",
       cost: "Free",
@@ -118,7 +118,7 @@ export const meccaData: City = {
     },
     {
       name: "Makkah Museum (Architecture of Two Holy Mosques)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
       description: "Museum located in the Al-Zahir district housing rare historical manuscripts, ancient Kaaba doors, marble pillars, and wooden relics from past restorations.",
       duration: "2 hours",
       cost: "Free",
@@ -144,25 +144,25 @@ export const meccaData: City = {
   food: [
     {
       name: "Saudi Lamb Kabsa",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
       description: "Saudi Arabia's national dish consisting of fragrant spiced long-grain rice topped with tender slow-roasted lamb and toasted almonds.",
       recommendation: "Try Al-Romansiah or Feldsaish near Ibrahim Al Khalil Street."
     },
     {
       name: "Albaik Broasted Chicken",
-      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80",
       description: "Legendary Saudi fried chicken marinated in garlic spices, served piping hot with signature garlic dipping sauce and fresh buns.",
       recommendation: "Order at Albaik inside Abraj Al Bait Clock Tower Mall."
     },
     {
       name: "Authentic Lamb Mandi",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
       description: "Succulent pit-roasted lamb cooked in an underground clay oven until meat falls off the bone, served over basmati rice.",
       recommendation: "Dine at Raydan or Al-Seddah."
     },
     {
       name: "Mutabbaq Pastry",
-      image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80",
       description: "Crispy pan-fried folded pastry stuffed with spiced minced beef, beaten eggs, chopped green onions, and lemon.",
       recommendation: "Available fresh at local evening street bakeries near Aziziya."
     }
@@ -279,7 +279,7 @@ export const meccaData: City = {
   hiddenGems: [
     {
       name: "Kiswah Factory (King Abdulaziz Complex for Holy Kaaba Kiswah)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
       description: "The official state workshop in Umm al-Jood where master artisans weave gold and silver Quranic calligraphy into the black silk Kiswa that covers the Kaaba.",
       tip: "Visits can be arranged through registered tour groups."
     }
@@ -341,111 +341,261 @@ export const medinaData: City = {
   seoDescription: "An expert content guide to Medina. Discover Al-Masjid an-Nabawi, Rawdah, Quba Mosque, Mount Uhud, Ajwa dates, and travel tips.",
   lat: 24.5247,
   lon: 39.5692,
+
+  // Quick Facts
   currency: "Saudi Riyal (SAR / ﷼)",
   language: "Arabic",
   timezone: "AST (UTC+3)",
+  population: "Approx. 1.5 Million",
+  elevation: "608 meters (1,995 ft) above sea level",
+  bestVisitDuration: "2 to 4 Days",
+  voltage: "220V / 60Hz",
+  plugType: "Type G (3-pin British standard)",
+  googleMapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116120.21987512415!2d39.54924!3d24.5247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbe5197d220d5%3A0x2e5453523030f287!2sMedina%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s",
+
+  emergencyContacts: [
+    { name: "Unified Emergency (All Services)", number: "911" },
+    { name: "Police", number: "999" },
+    { name: "Ambulance (Red Crescent)", number: "997" },
+    { name: "Civil Defense (Fire)", number: "998" },
+    { name: "Tourist Support", number: "930" }
+  ],
 
   overview: [
-    "Medina is a major Islamic pilgrimage site in western Saudi Arabia. At its center is Al-Masjid an-Nabawi (The Prophet’s Mosque), built by the Prophet Muhammad himself and serving as his burial site under the iconic Green Dome.",
-    "Known for its serene, peaceful atmosphere, Medina welcomes millions of visitors each year who pray in the Rawdah and visit historical sites such as Quba Mosque and Mount Uhud."
+    "Medina (Madinah al-Munawwarah), located in the Hejaz region of western Saudi Arabia, is Islam’s second holiest city. It served as the capital of the early Muslim community after the Prophet Muhammad's migration (Hijrah) from Mecca in 622 AD.",
+    "At its core stands Al-Masjid an-Nabawi (The Prophet’s Mosque), featuring iconic green and white umbrella canopies and the sacred Green Dome enclosing the Prophet's resting place. Known globally for its peaceful atmosphere, Medina offers visitors deep spiritual reflection, palm oases, and ancient battleground heritage."
   ],
 
   bestTimeToVisit: {
     season: "November to February (Cool Season)",
-    description: "Pleasant mild weather ideal for walking between central sanctuaries and date palm groves.",
-    weatherDetails: "Temperatures range from 16°C to 26°C."
+    description: "Mild winter temperatures (16°C–26°C) make walking along the pedestrianized Quba Walkway and visiting outdoor oases delightful.",
+    weatherDetails: "Summer months (June to August) reach 40°C–44°C; courtyard umbrella shade structures keep outdoor plazas comfortable during daytime prayers."
   },
 
   attractions: [
     {
       name: "Al-Masjid an-Nabawi (The Prophet's Mosque)",
-      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=600&q=80",
-      description: "The vast, beautiful mosque featuring giant shaded umbrellas and the sacred Green Dome.",
-      duration: "4 hours",
+      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80",
+      description: "The sprawling sanctuary featuring 250 retractable giant umbrella canopies, marble courtyards, and the sacred Green Dome.",
+      duration: "4 to 6 hours",
       cost: "Free",
       type: "Sacred Sanctuary"
+    },
+    {
+      name: "Quba Mosque (First Mosque in Islam)",
+      image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=80",
+      description: "The historic mosque whose foundation stone was laid by Prophet Muhammad upon arriving in Medina. Praying two units of prayer here carries the reward of an Umrah.",
+      duration: "2 hours",
+      cost: "Free",
+      type: "Islamic History"
+    },
+    {
+      name: "Mount Uhud & Archers' Hill (Jabal Rumaat)",
+      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+      description: "The famous granite mountain north of Medina, site of the historic Battle of Uhud (625 AD) and burial place of the Martyrs of Uhud including Hamza ibn Abdul-Muttalib.",
+      duration: "2 hours",
+      cost: "Free",
+      type: "Battleground & Memorial"
+    },
+    {
+      name: "Al Qiblatain Mosque (Mosque of the Two Qiblas)",
+      image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=800&q=80",
+      description: "The historic mosque where the qibla (direction of prayer) was divine revealed to change from Jerusalem toward the Kaaba in Mecca.",
+      duration: "1.5 hours",
+      cost: "Free",
+      type: "Quranic Site"
+    },
+    {
+      name: "Seven Mosques (Al-Masajid As-Sab'ah)",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      description: "A complex of small historic mosques situated on the western slope of Mount Sela, site of the famous Battle of the Trench (Khandaq).",
+      duration: "2 hours",
+      cost: "Free",
+      type: "Historic Complex"
+    },
+    {
+      name: "Dar Al Madinah Museum",
+      image: "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?auto=format&fit=crop&w=800&q=80",
+      description: "A specialized museum displaying interactive 3D scale models of Medina’s urban development and Islamic history from the prophetic era to present day.",
+      duration: "2 hours",
+      cost: "25 SAR",
+      type: "History Museum"
+    },
+    {
+      name: "Jannat al-Baqi (Baqi Cemetery)",
+      image: "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=800&q=80",
+      description: "The main historic cemetery adjacent to Al-Masjid an-Nabawi where many members of the Prophet's family, wives, and thousands of Companions are buried.",
+      duration: "1 hour",
+      cost: "Free",
+      type: "Sacred Cemetery"
+    },
+    {
+      name: "Medina Central Date Market",
+      image: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=80",
+      description: "Bustling traditional market featuring over 150 date varieties, including Medina's world-famous dark Ajwa dates, Safawi, and Anbara dates.",
+      duration: "1.5 hours",
+      cost: "Free to browse",
+      type: "Local Market"
     }
   ],
 
   thingsToDo: [
     {
-      title: "Pray in the Rawdah ash-Sharifah",
-      description: "Experience prayer in the area between the Prophet's house and minbar (Nusuk app permit required).",
+      title: "Pray inside Rawdah ash-Sharifah",
+      description: "Reserve a free Nusuk app permit to pray inside the sacred area between the Prophet's house and minbar, described as a garden of Paradise.",
       duration: "1 hour",
-      cost: "Free (Nusuk app registration)"
+      cost: "Free (Nusuk App Permit)"
+    },
+    {
+      title: "Stroll the Pedestrian Quba Walkway",
+      description: "Walk the beautiful 3km palm-lined pedestrian avenue connecting Al-Masjid an-Nabawi to Quba Mosque at sunset.",
+      duration: "1 to 2 hours",
+      cost: "Free"
     }
   ],
 
   food: [
     {
-      name: "Medina Ajwa Dates & Saudi Arabic Coffee (Gahwa)",
-      image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=600&q=80",
-      description: "Premium dark Ajwa dates paired with cardamom-infused light roast Saudi Arabic coffee.",
-      recommendation: "Visit the Central Date Market near Quba."
+      name: "Medina Ajwa Dates & Saudi Coffee (Gahwa)",
+      image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
+      description: "Soft, dark Ajwa dates grown in Medina palm groves, paired with golden cardamom-scented Saudi Arabic coffee.",
+      recommendation: "Purchase fresh dates at the Central Date Market near Quba."
+    },
+    {
+      name: "Madinah Mint Tea & Fresh Bread",
+      image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+      description: "Fragrant organic mint tea brewed with famous Madinah Hasawi mint, served alongside warm sesame flatbread.",
+      recommendation: "Enjoy at cafes along Quba Avenue."
+    },
+    {
+      name: "Saudi Saleeg Rice",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      description: "Comforting creamy short-grain rice cooked in chicken broth and milk, seasoned with ghee and cardamom, served with roasted chicken.",
+      recommendation: "Try at Al-Romansiah Medina."
     }
   ],
 
   whereToStay: [
     {
-      area: "Central Northern Markaziyah",
-      description: "Pedestrian plaza hotels surrounding Al-Masjid an-Nabawi courtyard.",
-      priceRange: "$$ - $$$ (Mid-Range & Luxury)",
-      recommendation: "Best for immediate walking access to the Prophet's Mosque."
+      area: "Northern Central Markaziyah",
+      description: "Prime pedestrian plaza zone directly facing the main gates of Al-Masjid an-Nabawi.",
+      priceRange: "$$$$ (5-Star Luxury)",
+      recommendation: "Dar Al Taqwa, Oberoi Madina, and Pullman Zamzam Madina."
+    },
+    {
+      area: "Southern Markaziyah",
+      description: "Lively commercial hotel district within 3–5 minutes walking distance to the Prophet's Mosque.",
+      priceRange: "$$$ (Mid-Range & Luxury)",
+      recommendation: "Anwar Al Madinah Movenpick and Crown Plaza Madinah."
+    },
+    {
+      area: "Quba Road & King Fahd District",
+      description: "Peaceful residential neighborhood 10 minutes from the Haram, offering modern budget hotels and easy bus transit.",
+      priceRange: "$$ (Budget-Friendly)",
+      recommendation: "Ideal for longer stays and quiet family travel."
     }
   ],
 
   bestRestaurants: [
     {
       name: "Arabesque Restaurant",
-      cuisine: "Middle Eastern & International",
-      description: "Upscale buffet dining overlooking the courtyards of the Prophet's Mosque.",
+      cuisine: "Middle Eastern & International Buffet",
+      description: "Upscale dining room offering direct view over the courtyards of the Prophet's Mosque.",
       location: "Northern Markaziyah",
-      priceRange: "80 - 180 SAR per person"
+      priceRange: "80 - 180 SAR per person ($$$)"
+    },
+    {
+      name: "Albaik Medina (King Faisal Branch)",
+      cuisine: "Saudi Broasted Fried Chicken",
+      description: "Famous local branch serving iconic crisp chicken, fries, and garlic sauce.",
+      location: "King Faisal Road",
+      priceRange: "15 - 35 SAR per person ($)"
+    },
+    {
+      name: "Town Pour Specialty Coffee",
+      cuisine: "Saudi Specialty Coffee & Bakery",
+      description: "Modern specialty coffeehouse serving single-origin coffees and fresh pastries.",
+      location: "Sultana Street",
+      priceRange: "20 - 45 SAR per person ($$)"
     }
   ],
 
   transportation: [
     {
-      type: "Haramain Bullet Train & Shuttle Buses",
-      description: "Haramain High-Speed train connects Medina Airport/Station to Mecca in 2 hours 15 mins.",
-      cost: "150 SAR train / 10 SAR city shuttle"
+      type: "Madinah Prince Mohammad bin Abdulaziz Airport (MED)",
+      description: "Modern international airport 15km northeast of Medina city center with quick taxi and shuttle links.",
+      cost: "Airport bus: 10 SAR / Taxi: 50 - 70 SAR"
+    },
+    {
+      type: "Haramain High-Speed Railway Station",
+      description: "Ultra-fast electric train station connecting Medina to Jeddah Airport (1h 50m) and Mecca (2h 15m).",
+      cost: "150 SAR per ticket"
+    },
+    {
+      type: "Uber & Careem Apps",
+      description: "Uber and Careem operate extensively with reliable, fixed digital app pricing.",
+      cost: "15 - 35 SAR per city ride"
     }
   ],
 
   budgetTips: [
     {
-      title: "Visit Quba Mosque on Foot",
-      description: "Walk the newly built pedestrianized Quba Avenue connecting the Prophet's Mosque directly to Quba Mosque."
+      title: "Walk Quba Pedestrian Avenue",
+      description: "Walk between Al-Masjid an-Nabawi and Quba Mosque along the car-free green walkway for free."
+    },
+    {
+      title: "Buy Ajwa Dates in Bulk",
+      description: "Visit the Central Date Market near Quba for direct farm dates at wholesale prices."
     }
   ],
 
   safetyTips: [
     {
-      title: "Book Rawdah Permit via Nusuk App",
-      description: "Access to pray inside the Rawdah requires a free timed permit via the official Nusuk smartphone app."
+      title: "Book Rawdah Permit on Nusuk App",
+      description: "Access to enter the Rawdah ash-Sharifah requires booking a free timed permit via the Saudi Nusuk app."
+    },
+    {
+      title: "Keep Hydrated in Courtyard Plazas",
+      description: "Free chilled Zamzam water dispensers line all courtyards of Al-Masjid an-Nabawi."
     }
   ],
 
   localEtiquette: [
     {
-      title: "Quiet Reverence",
-      description: "Medina is revered for its peaceful and calm atmosphere. Maintain quiet speech in prayer halls."
+      title: "Peaceful Reverence",
+      description: "Medina is world-renowned for its calm and serene atmosphere. Speak softly inside prayer halls."
     }
   ],
 
   hiddenGems: [
     {
-      name: "Quba Mosque (First Mosque in Islam)",
-      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=600&q=80",
-      description: "The very first mosque built by the Prophet Muhammad upon his arrival in Medina.",
-      tip: "Walk along Quba Walkway at sunset when palm trees light up."
+      name: "Quba Walkway Palm Oasis",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      description: "Tranquil palm date groves situated right alongside the pedestrian avenue between the two main mosques.",
+      tip: "Visit at sunset for cool mountain breezes."
     }
   ],
 
   faq: [
     {
       question: "Can non-Muslims visit Medina?",
-      answer: "Non-Muslims can visit Medina city and central areas, though the interior courtyard of Al-Masjid an-Nabawi remains reserved for Muslims."
+      answer: "Non-Muslim travelers can visit the city of Medina, modern districts, and cultural sites. Access into the inner courtyard of Al-Masjid an-Nabawi remains reserved for Muslims."
+    },
+    {
+      question: "How do I book a time slot to pray in the Rawdah?",
+      answer: "Download the official Saudi 'Nusuk' app on your smartphone, create a free account, and select an available date and time slot for your Rawdah permit."
+    },
+    {
+      question: "How far is Medina Airport from the Prophet's Mosque?",
+      answer: "Prince Mohammad bin Abdulaziz Airport (MED) is approximately 15 km northeast of the mosque, taking about 20 minutes by taxi or shuttle bus."
+    },
+    {
+      question: "What is the best way to travel between Mecca and Medina?",
+      answer: "The Haramain High-Speed Railway bullet train is the best method, covering the 450 km distance in just 2 hours and 15 minutes."
+    },
+    {
+      question: "What makes Ajwa dates from Medina famous?",
+      answer: "Ajwa dates are a soft, dark, premium date variety cultivated exclusively in the soil of Medina, praised in Islamic tradition for their health benefits."
     }
   ]
 };
