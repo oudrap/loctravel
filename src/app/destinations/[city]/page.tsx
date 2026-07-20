@@ -211,7 +211,7 @@ export default async function CityGuidePage({ params }: Props) {
             {/* 4. Top Attractions */}
             <section id="attractions" className="space-y-8">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Top Attractions
+                Top Attractions & Sacred Sites
               </h2>
               <div className="grid grid-cols-1 gap-8">
                 {city.attractions.map((attraction, index) => (
@@ -219,7 +219,7 @@ export default async function CityGuidePage({ params }: Props) {
                     key={index}
                     className="flex flex-col sm:flex-row gap-6 p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="sm:w-1/3 h-48 sm:h-auto relative rounded-2xl overflow-hidden shrink-0">
+                    <div className="sm:w-1/3 h-52 sm:h-auto relative rounded-2xl overflow-hidden shrink-0">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={attraction.image}
@@ -239,10 +239,20 @@ export default async function CityGuidePage({ params }: Props) {
                         <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                           {attraction.description}
                         </p>
+                        {attraction.whyFamous && (
+                          <div className="text-xs text-slate-700 dark:text-slate-300">
+                            <span className="font-bold text-emerald-600 dark:text-emerald-400">Why It's Famous:</span> {attraction.whyFamous}
+                          </div>
+                        )}
+                        {attraction.visitorTips && (
+                          <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-xs text-slate-600 dark:text-slate-400 font-mono">
+                            <span className="font-bold text-emerald-600 dark:text-emerald-400">💡 Visitor Tip:</span> {attraction.visitorTips}
+                          </div>
+                        )}
                       </div>
 
                       <div className="flex items-center justify-between text-xs font-mono pt-3 border-t border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400">
-                        <span>⏱️ {attraction.duration}</span>
+                        <span>⏱️ Visit Duration: {attraction.duration}</span>
                         <span className="font-bold text-emerald-600 dark:text-emerald-400">{attraction.cost}</span>
                       </div>
                     </div>
@@ -344,23 +354,32 @@ export default async function CityGuidePage({ params }: Props) {
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={stay.image}
-                          alt={stay.area}
+                          alt={stay.name || stay.area}
                           className="w-full h-full object-cover"
                         />
                       </div>
                     )}
                     <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                       <div className="space-y-2">
-                        <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                          {stay.priceRange}
-                        </span>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-1">{stay.area}</h3>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            {stay.priceRange}
+                          </span>
+                          {stay.starRating && (
+                            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                              {stay.starRating}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-1">{stay.name || stay.area}</h3>
+                        <p className="text-[11px] font-mono text-slate-400">Location: {stay.area}</p>
                         <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                           {stay.description}
                         </p>
                       </div>
-                      <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 italic">
-                        {stay.recommendation}
+                      <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
+                        {stay.bestFor && <p className="font-bold text-emerald-600 dark:text-emerald-400">Target: {stay.bestFor}</p>}
+                        <p className="italic">{stay.recommendation}</p>
                       </div>
                     </div>
                   </div>

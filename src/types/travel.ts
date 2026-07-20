@@ -7,6 +7,8 @@ export interface Attraction {
   name: string;
   image: string;
   description: string;
+  whyFamous?: string;
+  visitorTips?: string;
   duration: string;
   cost: string;
   type: string;
@@ -28,10 +30,13 @@ export interface FoodItem {
 
 export interface Accommodation {
   area: string;
+  name?: string;
   image?: string;
+  starRating?: string;
   description: string;
-  priceRange: string; // e.g. "$$ (Budget-Friendly)" or "$$$ (Boutique & Luxury)"
+  priceRange: string; // e.g. "$$$$ (5-Star Luxury)"
   recommendation: string;
+  bestFor?: string; // e.g. "Best for Families & Direct Haram Access"
 }
 
 export interface Restaurant {
@@ -40,7 +45,7 @@ export interface Restaurant {
   cuisine: string;
   description: string;
   location: string;
-  priceRange: string;
+  priceRange: string; // e.g. "$" or "$$"
 }
 
 export interface HiddenGem {

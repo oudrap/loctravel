@@ -33,21 +33,23 @@ export const meccaData: City = {
   ],
 
   overview: [
-    "Mecca (Makkah al-Mukarramah), situated in the Sirat Mountains of western Saudi Arabia, is the spiritual center of the Islamic world and the birthplace of the Prophet Muhammad. At its heart lies Al-Masjid al-Haram (The Sacred Mosque), enclosing the holy Kaaba—the cubic structure toward which over 1.8 billion Muslims face daily in prayer.",
-    "Rooted in Ibrahimic tradition, Mecca hosts millions of pilgrims annually for the Hajj pilgrimage and year-round Umrah. Modern Mecca seamlessly connects ancient heritage with world-class infrastructure, featuring high-speed bullet trains, soaring clock towers, and spacious pedestrian marble plazas designed for safety and spiritual comfort."
+    "Mecca (Makkah al-Mukarramah), nestled in the rocky Sirat Mountains of western Saudi Arabia, is the spiritual epicenter of Islam and the birthplace of the Prophet Muhammad. Home to Al-Masjid al-Haram (The Sacred Mosque), Mecca surrounds the holy Kaaba—the sacred cubic sanctuary toward which more than 1.8 billion Muslims worldwide orient themselves in daily prayer.",
+    "Steeped in rich Ibrahimic heritage, Mecca welcomes millions of pilgrims annually for the sacred Hajj pilgrimage and year-round Umrah journeys. Today, Mecca seamlessly blends centuries of Islamic heritage with state-of-the-art infrastructure, boasting 300 km/h electric bullet trains, world-renowned skyscraper hotels, and expansive air-conditioned marble courtyards designed for visitor safety and spiritual tranquility."
   ],
 
   bestTimeToVisit: {
-    season: "November to February (Cooler Months)",
-    description: "Winter months provide pleasant daytime temperatures (20°C–28°C) ideal for performing Umrah rituals and visiting historical mountains.",
-    weatherDetails: "Summer (June–August) brings high heat exceeding 42°C; during summer, perform Tawaf and rituals in early morning or night."
+    season: "November to February (Cool Season)",
+    description: "Winter offers mild daytime temperatures (20°C–28°C) that make performing outdoor Tawaf and climbing historical mountain sites comfortable.",
+    weatherDetails: "Spring (March–May) has moderate weather (28°C–35°C). Summer (June–August) experiences extreme desert heat over 42°C; during summer, perform rituals late at night or early morning. Peak spiritual seasons during Ramadan and Hajj require booking accommodations 3–6 months in advance."
   },
 
   attractions: [
     {
       name: "Masjid al-Haram (The Sacred Mosque)",
       image: "https://images.pexels.com/photos/12313658/pexels-photo-12313658.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "The largest mosque in the world, capable of accommodating millions of worshippers. It encompasses the Kaaba, Maqam Ibrahim, Safa and Marwa hills, and Zamzam wells.",
+      description: "The largest and holiest mosque in the world, capable of accommodating over 2.5 million worshippers across multi-tiered marble floors, vast courtyards, and air-conditioned prayer halls.",
+      whyFamous: "It encloses the Kaaba, Maqam Ibrahim, Safa and Marwa hills, and the blessed Zamzam wells.",
+      visitorTips: "Visit late at night (1:00 AM – 4:00 AM) or after Fajr for smoother pedestrian movement.",
       duration: "4 to 6 hours",
       cost: "Free",
       type: "Sacred Sanctuary"
@@ -55,7 +57,9 @@ export const meccaData: City = {
     {
       name: "The Sacred Kaaba",
       image: "https://images.pexels.com/photos/12313657/pexels-photo-12313657.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "The black silk kiswa-draped cubic sanctuary built by Prophet Ibrahim and Ismail. Pilgrims perform Tawaf by circumambulating seven times anti-clockwise around it.",
+      description: "The black silk kiswa-draped cubic structure located at the center of Al-Masjid al-Haram, built originally by Prophet Ibrahim and his son Ismail.",
+      whyFamous: "The qibla (direction of prayer) for all Muslims around the world and the focal point of Tawaf circumambulation.",
+      visitorTips: "Perform Tawaf on the upper floor decks when the ground Mataf plaza is crowded.",
       duration: "1 to 2 hours",
       cost: "Free",
       type: "Islam's Holiest Site"
@@ -63,7 +67,9 @@ export const meccaData: City = {
     {
       name: "Abraj Al Bait (Makkah Clock Royal Tower)",
       image: "https://images.pexels.com/photos/4388164/pexels-photo-4388164.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "A 601-meter landmark complex featuring the world's largest clock face, a multi-story shopping mall, astronomy museum, and panoramic viewing decks overlooking the Haram.",
+      description: "A 601-meter iconic skyscraper complex facing the Haram, featuring the world's largest clock face, an astronomy museum, and multi-level shopping centers.",
+      whyFamous: "One of the tallest buildings in the world, providing unmatched panoramic views over the holy sanctuary.",
+      visitorTips: "Visit the Clock Tower Museum on the top floors for astronomical exhibits and sky deck views.",
       duration: "2 to 3 hours",
       cost: "Free (Museum fee applies)",
       type: "Modern Landmark"
@@ -71,7 +77,9 @@ export const meccaData: City = {
     {
       name: "Jabal Al Noor (Mountain of Light)",
       image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Historic 642-meter mountain located 5km northeast of Mecca, famous for housing the Cave of Hira near its peak.",
+      description: "A prominent 642-meter mountain located 5 km northeast of central Mecca, containing stone stairs leading to its historic summit.",
+      whyFamous: "Houses the Cave of Hira near its peak where the Prophet Muhammad spent solitary retreats.",
+      visitorTips: "Start climbing before dawn to beat the mid-day heat and wear sturdy hiking shoes.",
       duration: "3 hours",
       cost: "Free",
       type: "Historic Mountain"
@@ -79,7 +87,9 @@ export const meccaData: City = {
     {
       name: "Cave of Hira",
       image: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "The small cave near the summit of Jabal Al Noor where the Prophet Muhammad spent periods in solitary meditation and received the first Quranic revelation from Archangel Gabriel.",
+      description: "The small natural cave entrance near the summit of Jabal Al Noor overlooking the Mecca valley below.",
+      whyFamous: "The sacred site where Archangel Gabriel revealed the very first Quranic verses to Prophet Muhammad.",
+      visitorTips: "Exercise care on the steep upper stone steps near the summit.",
       duration: "2 hours",
       cost: "Free",
       type: "Quranic Heritage"
@@ -87,15 +97,19 @@ export const meccaData: City = {
     {
       name: "Jabal Thawr (Thawr Mountain & Cave)",
       image: "https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "The mountain south of Mecca containing the cave where the Prophet Muhammad and Abu Bakr sheltered for three days during their migration (Hijrah) to Medina.",
-      duration: "3 hours",
+      description: "A steep mountain located 4 km south of Mecca containing the famous cave near its summit.",
+      whyFamous: "The cave where Prophet Muhammad and Abu Bakr sheltered for three days during the Hijrah migration to Medina.",
+      visitorTips: "Requires a 2-hour steep mountain hike; bring plenty of water.",
+      duration: "3 to 4 hours",
       cost: "Free",
       type: "Islamic History"
     },
     {
-      name: "Mina Valley",
+      name: "Mina Valley (City of Tents)",
       image: "https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "The 'City of Tents' located 8km east of Mecca, housing over 100,000 air-conditioned fireproof tents for Hajj pilgrims and the Jamarat pillars.",
+      description: "A spacious valley located 8 km east of Mecca filled with over 100,000 air-conditioned, fireproof tent structures.",
+      whyFamous: "Houses millions of pilgrims during the days of Hajj and contains the Jamarat stoning ritual bridge.",
+      visitorTips: "Accessible by bus or metro train during the Hajj season.",
       duration: "2 hours",
       cost: "Free",
       type: "Hajj Landmark"
@@ -103,7 +117,9 @@ export const meccaData: City = {
     {
       name: "Muzdalifah",
       image: "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "An open level area between Mina and Arafat where Hajj pilgrims spend the night under the open sky and gather pebbles for Jamarat.",
+      description: "An open, level desert plain situated between Mina and Mount Arafat.",
+      whyFamous: "Pilgrims spend the night under the open sky here during Hajj and gather pebbles for the Jamarat.",
+      visitorTips: "Visited primarily during the 9th night of Dhul Hijjah as part of Hajj rites.",
       duration: "1 to 2 hours",
       cost: "Free",
       type: "Sacred Plain"
@@ -111,7 +127,9 @@ export const meccaData: City = {
     {
       name: "Mount Arafat (Jabal al-Rahmah)",
       image: "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "The granite hill of mercy 20km east of Mecca where the Prophet Muhammad delivered his Farewell Sermon. Standing at Arafat is the central pillar of Hajj.",
+      description: "A granite hill of mercy rising 70 meters high, located on the plain of Arafat 20 km east of Mecca.",
+      whyFamous: "Site where Prophet Muhammad delivered his Farewell Sermon; standing at Arafat is the core pillar of Hajj.",
+      visitorTips: "Visit the pillar marker at the top of the granite hill for panoramic valley views.",
       duration: "2 hours",
       cost: "Free",
       type: "Pillar of Hajj"
@@ -119,7 +137,9 @@ export const meccaData: City = {
     {
       name: "Makkah Museum (Architecture of Two Holy Mosques)",
       image: "https://images.pexels.com/photos/2180803/pexels-photo-2180803.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Museum located in the Al-Zahir district housing rare historical manuscripts, ancient Kaaba doors, marble pillars, and wooden relics from past restorations.",
+      description: "A cultural museum in the Al-Zahir district housing rare historical artifacts, manuscripts, and architectural relics.",
+      whyFamous: "Features ancient marble pillars, wooden doors, and historical brass locks from past restorations of the Kaaba.",
+      visitorTips: "Open during daytime hours; great educational stop for families.",
       duration: "2 hours",
       cost: "Free",
       type: "Cultural Museum"
@@ -145,7 +165,7 @@ export const meccaData: City = {
     {
       name: "Saudi Lamb Kabsa",
       image: "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Saudi Arabia's national dish consisting of fragrant spiced long-grain rice topped with tender slow-roasted lamb and toasted almonds.",
+      description: "Saudi Arabia's national dish consisting of fragrant spiced long-grain basmati rice topped with tender slow-roasted lamb and toasted almonds.",
       recommendation: "Try Al-Romansiah or Feldsaish near Ibrahim Al Khalil Street."
     },
     {
@@ -170,60 +190,143 @@ export const meccaData: City = {
 
   whereToStay: [
     {
-      area: "Abraj Al Bait & King Abdulaziz Gate Zone",
+      name: "Raffles Makkah Palace",
+      area: "Abraj Al Bait Complex",
       image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Luxury skyscraper hotels connected directly to Al-Masjid al-Haram with direct floor access into prayer halls.",
-      priceRange: "$$$$ (5-Star Luxury)",
-      recommendation: "Pullman ZamZam Makkah, Swissôtel Makkah, and Raffles Makkah Palace."
+      starRating: "5-Star Ultra Luxury",
+      description: "Exclusive suite-only hotel directly overlooking the Kaaba with 24/7 personal butler service and private dining.",
+      priceRange: "$$$$ (Ultra Luxury)",
+      recommendation: "Direct Kaaba View Suites",
+      bestFor: "Luxury Travelers & Couples"
     },
     {
-      area: "Ibrahim Al Khalil Street",
+      name: "Pullman ZamZam Makkah",
+      area: "Abraj Al Bait Complex",
       image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Lively boulevard within 5–10 minutes walking distance of the Haram, lined with dining and shopping.",
-      priceRange: "$$$ (Mid-Range & Premier)",
-      recommendation: "Hilton Suites Makkah and Dar Al Taqwa."
+      starRating: "5-Star Premier",
+      description: "Massive skyscraper hotel featuring 1,300+ rooms connected directly to King Abdulaziz Gate prayer halls.",
+      priceRange: "$$$$ (5-Star)",
+      recommendation: "Haram View Family Suites",
+      bestFor: "Families & Group Pilgrims"
     },
     {
-      area: "Aziziya District",
+      name: "Swissôtel Makkah",
+      area: "King Abdul Aziz Gate Zone",
       image: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Modern district located 10 minutes east of the Haram, featuring affordable hotels connected by frequent shuttle buses.",
-      priceRange: "$$ (Budget-Friendly)",
-      recommendation: "Ideal for longer stays and budget-conscious Umrah travelers."
+      starRating: "5-Star Luxury",
+      description: "Modern luxury hotel with private direct entrance into the main courtyard plaza of Al-Masjid al-Haram.",
+      priceRange: "$$$$ (Luxury)",
+      recommendation: "Direct Plaza Level Entrance",
+      bestFor: "Worshippers Seeking Convenience"
+    },
+    {
+      name: "Hilton Suites Makkah",
+      area: "Ibrahim Al Khalil Street",
+      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
+      starRating: "5-Star Premier",
+      description: "Spacious suite-style hotel situated right on Ibrahim Al Khalil boulevard within 5 minutes walking distance of the Haram.",
+      priceRange: "$$$ (Premier)",
+      recommendation: "Spacious Multi-Room Suites",
+      bestFor: "Families & Long Stays"
+    },
+    {
+      name: "Makkah Hotel & Towers",
+      area: "Haram Plaza Zone",
+      image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800",
+      starRating: "5-Star Classic",
+      description: "Popular landmark hotel with multiple dining halls, direct shopping arcade, and floor audio feeds from Haram prayers.",
+      priceRange: "$$$ (Mid-Range to Luxury)",
+      recommendation: "Classic Haram View Rooms",
+      bestFor: "Group Travel & Elderly Worshippers"
+    },
+    {
+      name: "DoubleTree by Hilton Makkah Jabal Omar",
+      area: "Jabal Omar District",
+      image: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800",
+      starRating: "4-Star Comfort",
+      description: "Contemporary hotel located in Jabal Omar development offering shuttle service and spacious family rooms.",
+      priceRange: "$$ (Mid-Range)",
+      recommendation: "Family Quad Rooms",
+      bestFor: "Mid-Range Comfort & Families"
+    },
+    {
+      name: "Le Méridien Makkah",
+      area: "Ajyad Street",
+      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
+      starRating: "5-Star Elegant",
+      description: "Quiet luxury hotel located 200 meters from Ajyad Gate, featuring refined restaurants and peaceful atmosphere.",
+      priceRange: "$$$ (Premier)",
+      recommendation: "Ajyad View Executive Rooms",
+      bestFor: "Peaceful Luxury & Business"
+    },
+    {
+      name: "Anjum Hotel Makkah",
+      area: "Shubaikah District",
+      image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800",
+      starRating: "5-Star Great Value",
+      description: "Massive 1,700-room hotel facing the northern expansions of Al-Masjid al-Haram with spacious outdoor plazas.",
+      priceRange: "$$ (Great Value)",
+      recommendation: "Northern Plaza View Rooms",
+      bestFor: "Value-Conscious Pilgrims"
     }
   ],
 
   bestRestaurants: [
     {
-      name: "Albaik (Abraj Al Bait Branch)",
+      name: "Albaik (Abraj Al Bait Clock Tower Branch)",
       image: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Saudi Broasted Fast Casual",
-      description: "Iconic Saudi restaurant chain famous for legendary garlic chicken and shrimp meals.",
+      description: "Iconic Saudi restaurant chain world-famous for crisp garlic broasted chicken, fried jumbo shrimp, and signature dipping sauces.",
       location: "Abraj Al Bait Mall, 4th Floor",
-      priceRange: "15 - 35 SAR per person ($)"
+      priceRange: "$ (15 - 35 SAR per person)"
     },
     {
       name: "Al-Tazaj",
       image: "https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Saudi BBQ Chicken",
-      description: "Popular restaurant specializing in wood-charcoal grilled tender chicken served with garlic bread and tahini.",
+      description: "Popular casual dining venue specializing in wood-charcoal grilled chicken marinated in fresh garlic, lemon, and spices.",
       location: "Ibrahim Al Khalil Street",
-      priceRange: "20 - 40 SAR per person ($)"
+      priceRange: "$ (20 - 40 SAR per person)"
     },
     {
       name: "Feldsaish Restaurant",
       image: "https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Traditional Arabian & Mandi",
-      description: "Spacious family dining room serving classic Saudi Kabsa, lamb Mandi, and grilled kebabs.",
-      location: "Near King Abdul Aziz Road",
-      priceRange: "45 - 90 SAR per person ($$)"
+      description: "Spacious family restaurant serving authentic Saudi Lamb Kabsa, tender pit-roasted Mandi, and charcoal kebabs.",
+      location: "King Abdul Aziz Road",
+      priceRange: "$$ (45 - 90 SAR per person)"
     },
     {
       name: "Al-Romansiah",
       image: "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=800",
-      cuisine: "Authentic Saudi Cuisine",
-      description: "Renowned restaurant for traditional Saudi seating floor rooms serving Madghout, Saleeg, and lamb dishes.",
-      location: "Al Aziziya",
-      priceRange: "50 - 110 SAR per person ($$)"
+      cuisine: "Authentic Saudi Floor Dining",
+      description: "Renowned restaurant featuring traditional Saudi floor-seated dining rooms serving Madghout, Saleeg, and slow-roasted lamb.",
+      location: "Al Aziziya District",
+      priceRange: "$$ (50 - 110 SAR per person)"
+    },
+    {
+      name: "Raydan Restaurant",
+      image: "https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=800",
+      cuisine: "Traditional Hejazi & Mandi",
+      description: "Popular local dining spot specializing in slow-cooked seasoned lamb, chicken Zurbian, and aromatic basmati rice.",
+      location: "Kudai District",
+      priceRange: "$$ (40 - 85 SAR per person)"
+    },
+    {
+      name: "Retaj Makkah Restaurant",
+      image: "https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg?auto=compress&cs=tinysrgb&w=800",
+      cuisine: "Middle Eastern & Mixed Grill",
+      description: "Family-friendly venue serving freshly grilled shish tawook, lamb kebabs, hummus, mutabbal, and fresh flatbreads.",
+      location: "Jabal Omar Complex",
+      priceRange: "$$ (50 - 100 SAR per person)"
+    },
+    {
+      name: "Smokey Beards BBQ Makkah",
+      image: "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=800",
+      cuisine: "Arabian Smoked Meats",
+      description: "Modern specialty BBQ joint serving slow-smoked beef brisket, smoked lamb ribs, and house-made sauces.",
+      location: "Al Shouqiyya District",
+      priceRange: "$$$ (70 - 140 SAR per person)"
     }
   ],
 
@@ -231,48 +334,60 @@ export const meccaData: City = {
     {
       type: "King Abdulaziz International Airport (Jeddah - JED)",
       image: "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Main international gateway 80km west of Mecca. Terminal 1 features a direct high-speed railway station.",
-      cost: "Airport train: 70 SAR / Taxi: 200 - 250 SAR"
+      description: "The primary international arrival gateway located 80 km west of Mecca. Terminal 1 features a direct high-speed railway station, luxury airport lounges, and official taxi ranks.",
+      cost: "Bullet Train: 70 SAR / Airport Taxi: 200 - 250 SAR"
     },
     {
       type: "Haramain High-Speed Railway",
       image: "https://images.pexels.com/photos/258510/pexels-photo-258510.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "State-of-the-art 300 km/h electric bullet train connecting Mecca Station to Jeddah Airport (43 min) and Medina (2h 15m).",
+      description: "Ultra-modern 300 km/h electric bullet train connecting Makkah Railway Station to Jeddah Airport (43 mins), Jeddah City (34 mins), and Medina (2h 15m).",
       cost: "70 - 150 SAR per ticket"
+    },
+    {
+      type: "Official Mecca Taxis (Green & White)",
+      image: "https://images.pexels.com/photos/4606346/pexels-photo-4606346.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Licensed municipal taxis operate 24/7 across Mecca. Always request the taximeter or agree on fixed fare before departure.",
+      cost: "20 - 50 SAR per inner city trip"
     },
     {
       type: "Uber & Careem Ride-Hailing Apps",
       image: "https://images.pexels.com/photos/4606346/pexels-photo-4606346.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Uber and Careem operate extensively across Mecca with fixed digital pricing and card payments.",
-      cost: "20 - 60 SAR per local city trip"
+      description: "Uber and Careem operate extensively across Mecca with fixed upfront digital fares, GPS tracking, and card/Apple Pay integration.",
+      cost: "20 - 60 SAR per trip"
     },
     {
-      type: "Public SAPTCO Buses & Shuttle Buses",
+      type: "Public SAPTCO Buses & Hotel Shuttles",
       image: "https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Free hotel shuttle buses run 24/7 along dedicated lanes connecting Aziziya hotels to Haram bus terminals.",
+      description: "Free 24/7 hotel shuttle buses run along dedicated bus transit lanes connecting Aziziya and Kudai hotel districts directly to Haram bus terminals.",
       cost: "Free hotel shuttles / 5 - 10 SAR SAPTCO"
+    },
+    {
+      type: "Walking around Central Mecca Courtyards",
+      image: "https://images.pexels.com/photos/12313658/pexels-photo-12313658.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Central Mecca around Al-Masjid al-Haram features vast car-free pedestrian marble plazas designed for safe walking directly to mosque gates.",
+      cost: "Free"
     }
   ],
 
   budgetTips: [
     {
-      title: "Book Haramain Train Tickets Early",
-      description: "Book bullet train tickets on the official Haramain Railway app 2–4 weeks in advance to secure standard class seats before peak fares."
+      title: "Book Haramain Railway Tickets 2-4 Weeks Early",
+      description: "Reserve high-speed bullet train tickets on the official Haramain Railway app standard class in advance before peak tickets sell out."
     },
     {
-      title: "Use Mada & Contactless Card Payments",
-      description: "Saudi Arabia is virtually cashless; Apple Pay and contactless cards are accepted at all restaurants, taxis, and stores with zero fees."
+      title: "Use Saudi Mada & Contactless Card Payments",
+      description: "Saudi Arabia is virtually cashless; Apple Pay, Visa, and Mastercard are accepted at all restaurants, taxis, and retail stores with zero fees."
     }
   ],
 
   safetyTips: [
     {
-      title: "Follow Crowd Control Lanes at the Haram",
-      description: "Al-Masjid al-Haram uses designated one-way pedestrian lanes during prayer times. Follow security staff directions and signs."
+      title: "Follow Pedestrian Crowd Management Lanes",
+      description: "Al-Masjid al-Haram enforces designated one-way pedestrian walking lanes during peak prayer hours. Follow security directions for safety."
     },
     {
-      title: "Drink Free Zamzam Water Frequently",
-      description: "Free refrigerated Zamzam water containers and dispensers are located every few meters inside prayer halls and courtyard plazas."
+      title: "Stay Hydrated with Free Zamzam Dispensers",
+      description: "Free chilled and room-temperature Zamzam mineral water dispensers are available every few meters inside prayer halls and courtyard plazas."
     }
   ],
 
@@ -282,8 +397,8 @@ export const meccaData: City = {
       description: "By Saudi law and religious tradition, entry into the city boundary of Mecca is strictly reserved for Muslim travelers."
     },
     {
-      title: "Modest Ihram & Clothing Guidelines",
-      description: "Men performing Umrah wear two unstitched white Ihram sheets; women wear modest loose-fitting clothing and headscarf."
+      title: "Modest Clothing & Ihram Guidelines",
+      description: "Men performing Umrah wear two unstitched white Ihram sheets; women wear modest loose-fitting clothing and a headscarf (Hijab)."
     }
   ],
 
