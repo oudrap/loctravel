@@ -69,6 +69,11 @@ export interface EtiquetteTip {
   description: string;
 }
 
+export interface EmergencyContact {
+  name: string;
+  number: string;
+}
+
 export interface City {
   slug: string;
   name: string;
@@ -86,6 +91,13 @@ export interface City {
   currency?: string;
   language?: string;
   timezone?: string;
+  population?: string;
+  elevation?: string;
+  bestVisitDuration?: string;
+  voltage?: string;
+  plugType?: string;
+  googleMapEmbedUrl?: string;
+  emergencyContacts?: EmergencyContact[];
 
   // Sections
   overview: string[];

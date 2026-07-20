@@ -57,10 +57,14 @@ export default async function CityGuidePage({ params }: Props) {
   // Fetch Live Weather from OpenWeatherMap API (cached 30m server-side)
   const weather = await getCityWeather(city.lat, city.lon, city.name);
 
-  // Related Destinations (same region first, or other cities)
+  // Related Destinations (Prioritize direct religious/regional connections, e.g. Mecca <-> Medina)
   const relatedCities = cities
     .filter((c) => c.slug !== city.slug)
-    .sort((a, b) => (a.region === city.region ? -1 : 1))
+    .sort((a, b) => {
+      if (city.slug === "mecca" && b.slug === "medina") return 1;
+      if (city.slug === "medina" && b.slug === "mecca") return 1;
+      return a.region === city.region ? -1 : 1;
+    })
     .slice(0, 3);
 
   // Schema data
@@ -144,7 +148,7 @@ export default async function CityGuidePage({ params }: Props) {
             {/* Overview */}
             <section id="overview" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Overview
+                Overview & History
               </h2>
               <div className="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed font-light text-base md:text-lg">
                 {city.overview.map((paragraph, index) => (
@@ -152,6 +156,27 @@ export default async function CityGuidePage({ params }: Props) {
                 ))}
               </div>
             </section>
+
+            {/* Interactive Map Section */}
+            {city.googleMapEmbedUrl && (
+              <section id="city-map" className="space-y-4">
+                <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
+                  Interactive Location Map
+                </h2>
+                <div className="w-full h-80 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
+                  <iframe
+                    src={city.googleMapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Google Map of ${city.name}`}
+                  />
+                </div>
+              </section>
+            )}
 
             <AdSenseSlot slot="city-below-overview" />
 
@@ -169,7 +194,7 @@ export default async function CityGuidePage({ params }: Props) {
               <div className="flex items-center gap-3">
                 <span className="text-2xl">📅</span>
                 <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white font-display">
-                  Best Time to Visit
+                  Best Time to Visit & Climate
                 </h2>
               </div>
               <p className="text-slate-800 dark:text-slate-200 font-semibold text-lg">
@@ -179,7 +204,7 @@ export default async function CityGuidePage({ params }: Props) {
                 {city.bestTimeToVisit.description}
               </p>
               <div className="pt-3 border-t border-emerald-500/10 text-xs text-emerald-700 dark:text-emerald-400 font-mono">
-                Weather & Climate Details: {city.bestTimeToVisit.weatherDetails}
+                Weather & Season Details: {city.bestTimeToVisit.weatherDetails}
               </div>
             </section>
 
@@ -231,25 +256,19 @@ export default async function CityGuidePage({ params }: Props) {
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
                 Things to Do
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {(city.thingsToDo || [
                   {
-                    title: "Walk Historic Districts",
-                    description: "Explore narrow cobblestone alleyways, historic architecture, and local artisan shops.",
+                    title: "Explore Sacred Sites & Old Quarter",
+                    description: "Walk historic alleyways, ancient shrines, and local markets.",
                     duration: "2-3 hours",
                     cost: "Free"
                   },
                   {
-                    title: "Local Market Tasting",
-                    description: "Visit traditional neighborhood markets to sample fresh local produce and seasonal snacks.",
-                    duration: "1.5 hours",
-                    cost: "Budget-friendly"
-                  },
-                  {
-                    title: "Sunset Viewpoint Stroll",
-                    description: "Catch panoramic city views from hilltop parks and public terraces as lights come on.",
-                    duration: "1 hour",
-                    cost: "Free"
+                    title: "Haramain High-Speed Rail Journey",
+                    description: "Experience world-class 300 km/h train service connecting coastal hubs.",
+                    duration: "43 mins to 2 hours",
+                    cost: "70 - 150 SAR"
                   }
                 ]).map((item, index) => (
                   <div
@@ -275,7 +294,7 @@ export default async function CityGuidePage({ params }: Props) {
             {/* 6. Local Food */}
             <section id="food" className="space-y-8">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Local Food & Culinary Scene
+                Local Food & Popular Dishes
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {city.food.map((dish, index) => (
@@ -312,29 +331,10 @@ export default async function CityGuidePage({ params }: Props) {
             {/* 7. Where to Stay (Hotels & Areas) */}
             <section id="where-to-stay" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Where to Stay in {city.name}
+                Best Hotels & Where to Stay in {city.name}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {(city.whereToStay || [
-                  {
-                    area: "City Center / Old Town",
-                    description: "Historic heart of the city within easy walking distance to main sights and landmarks.",
-                    priceRange: "$$ - $$$ (Mid-Range & Luxury)",
-                    recommendation: "Perfect for first-time visitors who want central location and easy transit."
-                  },
-                  {
-                    area: "Arts & Boutique Quarter",
-                    description: "Charming neighborhood lined with independent cafes, art galleries, and historic homestays.",
-                    priceRange: "$$ (Boutique & Mid-Range)",
-                    recommendation: "Great for culture enthusiasts and couples seeking romantic charm."
-                  },
-                  {
-                    area: "Outer Transit Belt",
-                    description: "Quiet residential neighborhood near metro stations with affordable budget hotels.",
-                    priceRange: "$ (Budget-Friendly)",
-                    recommendation: "Ideal for budget travelers and longer stays."
-                  }
-                ]).map((stay, index) => (
+                {(city.whereToStay || []).map((stay, index) => (
                   <div
                     key={index}
                     className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 flex flex-col justify-between"
@@ -359,32 +359,10 @@ export default async function CityGuidePage({ params }: Props) {
             {/* 8. Best Restaurants */}
             <section id="best-restaurants" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Best Restaurants & Local Eats
+                Best Restaurants
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {(city.bestRestaurants || [
-                  {
-                    name: `Central ${city.name} Bistro`,
-                    cuisine: "Authentic Local Cuisine",
-                    description: "Renowned neighborhood eatery serving freshly prepared traditional regional dishes.",
-                    location: "Central District",
-                    priceRange: "€€ - €€€"
-                  },
-                  {
-                    name: "Old Town Market Hall",
-                    cuisine: "Street Food & Artisanal Snacks",
-                    description: "Vibrant indoor market food hall featuring multiple local culinary stalls.",
-                    location: "Historic Quarter",
-                    priceRange: "€ - €€"
-                  },
-                  {
-                    name: "Panoramic Rooftop Dining",
-                    cuisine: "Modern Fusion & Drinks",
-                    description: "Scenic dining spot overlooking the skyline, perfect for sunset meals.",
-                    location: "Harbor / High Rise District",
-                    priceRange: "€€€"
-                  }
-                ]).map((restaurant, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {(city.bestRestaurants || []).map((restaurant, index) => (
                   <div
                     key={index}
                     className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-3 flex flex-col justify-between"
@@ -409,18 +387,18 @@ export default async function CityGuidePage({ params }: Props) {
               </div>
             </section>
 
-            {/* 9. Transportation Guide */}
+            {/* 9. Airport & Transportation Guide */}
             <section id="transportation" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Transportation Guide
+                Airport & Transportation Guide
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {city.transportation.map((option, index) => (
                   <div
                     key={index}
                     className="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3"
                   >
-                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-mono">
                       {option.type}
                     </div>
                     <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
@@ -437,7 +415,7 @@ export default async function CityGuidePage({ params }: Props) {
             {/* 10. Budget & Daily Costs */}
             <section id="budget" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Budget & Daily Expenses
+                Budget & Useful Travel Tips
               </h2>
               <div className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -455,19 +433,19 @@ export default async function CityGuidePage({ params }: Props) {
               </div>
             </section>
 
-            {/* 11. Safety Tips */}
+            {/* 11. Safety & Useful Tips */}
             <section id="safety" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Safety Tips & Scams to Avoid
+                Safety & Useful Travel Advice
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {city.safetyTips.map((tip, index) => (
                   <div
                     key={index}
                     className="p-6 rounded-3xl bg-amber-500/5 border border-amber-500/20 space-y-3"
                   >
                     <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                      <span>⚠️</span> {tip.title}
+                      <span>🛡️</span> {tip.title}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                       {tip.description}
@@ -477,26 +455,31 @@ export default async function CityGuidePage({ params }: Props) {
               </div>
             </section>
 
+            {/* Emergency Contacts Section */}
+            {city.emergencyContacts && city.emergencyContacts.length > 0 && (
+              <section id="emergency-contacts" className="p-6 rounded-3xl bg-red-500/5 border border-red-500/20 space-y-4">
+                <div className="flex items-center gap-2.5 text-red-500">
+                  <span className="text-xl">🚨</span>
+                  <h3 className="text-lg font-bold font-display">Emergency Numbers in {city.name}</h3>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+                  {city.emergencyContacts.map((contact, idx) => (
+                    <div key={idx} className="p-3 rounded-2xl bg-white dark:bg-slate-900 border border-red-500/20 space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">{contact.name}</span>
+                      <span className="text-base font-extrabold text-red-600 dark:text-red-400 font-mono">{contact.number}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* 12. Local Etiquette & Culture */}
             <section id="local-etiquette" className="space-y-6">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Local Etiquette & Customs
+                Local Customs & Etiquette
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {(city.localEtiquette || [
-                  {
-                    title: "Greetings & Mannerisms",
-                    description: "Learn basic polite phrases in the local language to greet shop owners and restaurant staff."
-                  },
-                  {
-                    title: "Tipping Etiquette",
-                    description: "Check bill policy; service charge is often included. Leaving small extra tips is appreciated."
-                  },
-                  {
-                    title: "Public Etiquette",
-                    description: "Respect local customs, keep noise levels moderate on public transit, and dress appropriately for sacred sites."
-                  }
-                ]).map((item, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {(city.localEtiquette || []).map((item, index) => (
                   <div
                     key={index}
                     className="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 space-y-2"
@@ -515,7 +498,7 @@ export default async function CityGuidePage({ params }: Props) {
             {/* 13. Hidden Gems */}
             <section id="hidden-gems" className="space-y-8">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4 font-display">
-                Hidden Gems & Local Secrets
+                Hidden Gems & Special Sites
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {city.hiddenGems.map((gem, index) => (
@@ -571,13 +554,49 @@ export default async function CityGuidePage({ params }: Props) {
           <aside className="lg:col-span-4 space-y-8">
             <div className="sticky top-28 space-y-8">
               
+              {/* Key Specs Card */}
+              {(city.population || city.elevation || city.voltage) && (
+                <div className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-4">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-emerald-400 font-mono">
+                    Essential Key Specs
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3 text-xs font-mono">
+                    {city.population && (
+                      <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700">
+                        <span className="text-slate-400 text-[10px] block">Population</span>
+                        <span className="font-bold text-white text-xs">{city.population}</span>
+                      </div>
+                    )}
+                    {city.elevation && (
+                      <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700">
+                        <span className="text-slate-400 text-[10px] block">Elevation</span>
+                        <span className="font-bold text-white text-xs">{city.elevation}</span>
+                      </div>
+                    )}
+                    {city.bestVisitDuration && (
+                      <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700 col-span-2">
+                        <span className="text-slate-400 text-[10px] block">Recommended Visit</span>
+                        <span className="font-bold text-white text-xs">{city.bestVisitDuration}</span>
+                      </div>
+                    )}
+                    {city.voltage && (
+                      <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700 col-span-2">
+                        <span className="text-slate-400 text-[10px] block">Electricity</span>
+                        <span className="font-bold text-white text-xs">{city.voltage} ({city.plugType})</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {/* Quick Navigation Box */}
               <div className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-4">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-400 font-mono">
                   Quick Navigation
                 </h3>
                 <ul className="space-y-2 text-xs text-slate-300 font-medium">
-                  <li><a href="#overview" className="hover:text-emerald-400 transition-colors">• Overview</a></li>
+                  <li><a href="#overview" className="hover:text-emerald-400 transition-colors">• Overview & History</a></li>
+                  {city.googleMapEmbedUrl && <li><a href="#city-map" className="hover:text-emerald-400 transition-colors">• Interactive Map</a></li>}
                   <li><a href="#live-weather" className="hover:text-emerald-400 transition-colors">• Live Weather</a></li>
                   <li><a href="#best-time" className="hover:text-emerald-400 transition-colors">• Best Time to Visit</a></li>
                   <li><a href="#attractions" className="hover:text-emerald-400 transition-colors">• Top Attractions</a></li>
@@ -587,8 +606,9 @@ export default async function CityGuidePage({ params }: Props) {
                   <li><a href="#best-restaurants" className="hover:text-emerald-400 transition-colors">• Best Restaurants</a></li>
                   <li><a href="#transportation" className="hover:text-emerald-400 transition-colors">• Transportation Guide</a></li>
                   <li><a href="#budget" className="hover:text-emerald-400 transition-colors">• Budget & Daily Costs</a></li>
-                  <li><a href="#safety" className="hover:text-emerald-400 transition-colors">• Safety Tips</a></li>
-                  <li><a href="#local-etiquette" className="hover:text-emerald-400 transition-colors">• Local Etiquette</a></li>
+                  <li><a href="#safety" className="hover:text-emerald-400 transition-colors">• Safety & Travel Advice</a></li>
+                  {city.emergencyContacts && <li><a href="#emergency-contacts" className="hover:text-emerald-400 transition-colors">• Emergency Numbers</a></li>}
+                  <li><a href="#local-etiquette" className="hover:text-emerald-400 transition-colors">• Local Customs</a></li>
                   <li><a href="#hidden-gems" className="hover:text-emerald-400 transition-colors">• Hidden Gems</a></li>
                   <li><a href="#faq" className="hover:text-emerald-400 transition-colors">• FAQ</a></li>
                 </ul>
