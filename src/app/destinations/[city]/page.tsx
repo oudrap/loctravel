@@ -11,6 +11,7 @@ import JsonLd, {
 } from "@/components/layout/JsonLd";
 import WeatherCard from "@/components/ui/WeatherCard";
 import NewsletterSection from "@/components/ui/NewsletterSection";
+import HeroCityCards from "@/components/ui/HeroCityCards";
 import { getCityWeather } from "@/lib/weather";
 
 interface Props {
@@ -119,25 +120,18 @@ export default async function CityGuidePage({ params }: Props) {
             </p>
           </div>
 
-          {/* Quick Facts Banner */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 max-w-4xl text-xs">
-            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Currency</span>
-              <span className="font-semibold text-white">{city.currency || "Local Currency"}</span>
-            </div>
-            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Language</span>
-              <span className="font-semibold text-white">{city.language || "Local Language"}</span>
-            </div>
-            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Best Season</span>
-              <span className="font-semibold text-white truncate block">{city.bestTimeToVisit.season.split("&")[0]}</span>
-            </div>
-            <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-              <span className="text-[10px] uppercase font-bold text-emerald-400 block">Timezone</span>
-              <span className="font-semibold text-white">{city.timezone || "Local Time"}</span>
-            </div>
-          </div>
+          {/* Quick City Info Cards */}
+          <HeroCityCards
+            currency={city.currency || "Local Currency"}
+            language={city.language || "Local Language"}
+            country={city.country}
+            timezone={weather?.timezoneFormatted || city.timezone || "UTC"}
+            timezoneOffsetSeconds={weather?.timezoneOffset || 0}
+            initialTimeStr={weather?.localTimeStr || ""}
+            temp={weather?.temp ?? null}
+            condition={weather?.condition ?? null}
+            weatherIcon={weather?.icon ?? null}
+          />
         </div>
       </section>
 
