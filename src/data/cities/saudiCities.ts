@@ -6,7 +6,7 @@ export const meccaData: City = {
   country: "Saudi Arabia",
   region: "Middle East",
   tagline: "The holiest city in Islam, home to the sacred Kaaba and Al-Masjid al-Haram",
-  heroImage: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80",
+  heroImage: "https://images.pexels.com/photos/12313658/pexels-photo-12313658.jpeg?auto=compress&cs=tinysrgb&w=1200",
   description: "Navigate Mecca like a local. Guide to Al-Masjid al-Haram, Kaaba, Hira Cave, Abraj Al Bait, Haramain train, hotels, and visitor tips.",
   seoTitle: "Mecca Travel Guide: The Ultimate Guide to Al-Masjid al-Haram & Umrah | LocTravel",
   seoDescription: "An expert content guide to Mecca, Saudi Arabia. Discover Al-Masjid al-Haram, the Kaaba, Abraj Al Bait, Cave of Hira, hotels, transportation, and travel tips.",
@@ -46,7 +46,7 @@ export const meccaData: City = {
   attractions: [
     {
       name: "Masjid al-Haram (The Sacred Mosque)",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/12313658/pexels-photo-12313658.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The largest mosque in the world, capable of accommodating millions of worshippers. It encompasses the Kaaba, Maqam Ibrahim, Safa and Marwa hills, and Zamzam wells.",
       duration: "4 to 6 hours",
       cost: "Free",
@@ -54,7 +54,7 @@ export const meccaData: City = {
     },
     {
       name: "The Sacred Kaaba",
-      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/12313657/pexels-photo-12313657.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The black silk kiswa-draped cubic sanctuary built by Prophet Ibrahim and Ismail. Pilgrims perform Tawaf by circumambulating seven times anti-clockwise around it.",
       duration: "1 to 2 hours",
       cost: "Free",
@@ -62,7 +62,7 @@ export const meccaData: City = {
     },
     {
       name: "Abraj Al Bait (Makkah Clock Royal Tower)",
-      image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/4388164/pexels-photo-4388164.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "A 601-meter landmark complex featuring the world's largest clock face, a multi-story shopping mall, astronomy museum, and panoramic viewing decks overlooking the Haram.",
       duration: "2 to 3 hours",
       cost: "Free (Museum fee applies)",
@@ -70,7 +70,7 @@ export const meccaData: City = {
     },
     {
       name: "Jabal Al Noor (Mountain of Light)",
-      image: "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Historic 642-meter mountain located 5km northeast of Mecca, famous for housing the Cave of Hira near its peak.",
       duration: "3 hours",
       cost: "Free",
@@ -78,7 +78,7 @@ export const meccaData: City = {
     },
     {
       name: "Cave of Hira",
-      image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The small cave near the summit of Jabal Al Noor where the Prophet Muhammad spent periods in solitary meditation and received the first Quranic revelation from Archangel Gabriel.",
       duration: "2 hours",
       cost: "Free",
@@ -86,7 +86,7 @@ export const meccaData: City = {
     },
     {
       name: "Jabal Thawr (Thawr Mountain & Cave)",
-      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The mountain south of Mecca containing the cave where the Prophet Muhammad and Abu Bakr sheltered for three days during their migration (Hijrah) to Medina.",
       duration: "3 hours",
       cost: "Free",
@@ -94,7 +94,7 @@ export const meccaData: City = {
     },
     {
       name: "Mina Valley",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The 'City of Tents' located 8km east of Mecca, housing over 100,000 air-conditioned fireproof tents for Hajj pilgrims and the Jamarat pillars.",
       duration: "2 hours",
       cost: "Free",
@@ -102,7 +102,7 @@ export const meccaData: City = {
     },
     {
       name: "Muzdalifah",
-      image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "An open level area between Mina and Arafat where Hajj pilgrims spend the night under the open sky and gather pebbles for Jamarat.",
       duration: "1 to 2 hours",
       cost: "Free",
@@ -110,7 +110,7 @@ export const meccaData: City = {
     },
     {
       name: "Mount Arafat (Jabal al-Rahmah)",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The granite hill of mercy 20km east of Mecca where the Prophet Muhammad delivered his Farewell Sermon. Standing at Arafat is the central pillar of Hajj.",
       duration: "2 hours",
       cost: "Free",
@@ -118,7 +118,7 @@ export const meccaData: City = {
     },
     {
       name: "Makkah Museum (Architecture of Two Holy Mosques)",
-      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2180803/pexels-photo-2180803.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Museum located in the Al-Zahir district housing rare historical manuscripts, ancient Kaaba doors, marble pillars, and wooden relics from past restorations.",
       duration: "2 hours",
       cost: "Free",
@@ -144,25 +144,25 @@ export const meccaData: City = {
   food: [
     {
       name: "Saudi Lamb Kabsa",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Saudi Arabia's national dish consisting of fragrant spiced long-grain rice topped with tender slow-roasted lamb and toasted almonds.",
       recommendation: "Try Al-Romansiah or Feldsaish near Ibrahim Al Khalil Street."
     },
     {
       name: "Albaik Broasted Chicken",
-      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Legendary Saudi fried chicken marinated in garlic spices, served piping hot with signature garlic dipping sauce and fresh buns.",
       recommendation: "Order at Albaik inside Abraj Al Bait Clock Tower Mall."
     },
     {
       name: "Authentic Lamb Mandi",
-      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Succulent pit-roasted lamb cooked in an underground clay oven until meat falls off the bone, served over basmati rice.",
       recommendation: "Dine at Raydan or Al-Seddah."
     },
     {
       name: "Mutabbaq Pastry",
-      image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/208537/pexels-photo-208537.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Crispy pan-fried folded pastry stuffed with spiced minced beef, beaten eggs, chopped green onions, and lemon.",
       recommendation: "Available fresh at local evening street bakeries near Aziziya."
     }
@@ -171,21 +171,21 @@ export const meccaData: City = {
   whereToStay: [
     {
       area: "Abraj Al Bait & King Abdulaziz Gate Zone",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Luxury skyscraper hotels connected directly to Al-Masjid al-Haram with direct floor access into prayer halls.",
       priceRange: "$$$$ (5-Star Luxury)",
       recommendation: "Pullman ZamZam Makkah, Swissôtel Makkah, and Raffles Makkah Palace."
     },
     {
       area: "Ibrahim Al Khalil Street",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Lively boulevard within 5–10 minutes walking distance of the Haram, lined with dining and shopping.",
       priceRange: "$$$ (Mid-Range & Premier)",
       recommendation: "Hilton Suites Makkah and Dar Al Taqwa."
     },
     {
       area: "Aziziya District",
-      image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Modern district located 10 minutes east of the Haram, featuring affordable hotels connected by frequent shuttle buses.",
       priceRange: "$$ (Budget-Friendly)",
       recommendation: "Ideal for longer stays and budget-conscious Umrah travelers."
@@ -195,7 +195,7 @@ export const meccaData: City = {
   bestRestaurants: [
     {
       name: "Albaik (Abraj Al Bait Branch)",
-      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Saudi Broasted Fast Casual",
       description: "Iconic Saudi restaurant chain famous for legendary garlic chicken and shrimp meals.",
       location: "Abraj Al Bait Mall, 4th Floor",
@@ -203,7 +203,7 @@ export const meccaData: City = {
     },
     {
       name: "Al-Tazaj",
-      image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Saudi BBQ Chicken",
       description: "Popular restaurant specializing in wood-charcoal grilled tender chicken served with garlic bread and tahini.",
       location: "Ibrahim Al Khalil Street",
@@ -211,7 +211,7 @@ export const meccaData: City = {
     },
     {
       name: "Feldsaish Restaurant",
-      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Traditional Arabian & Mandi",
       description: "Spacious family dining room serving classic Saudi Kabsa, lamb Mandi, and grilled kebabs.",
       location: "Near King Abdul Aziz Road",
@@ -219,7 +219,7 @@ export const meccaData: City = {
     },
     {
       name: "Al-Romansiah",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Authentic Saudi Cuisine",
       description: "Renowned restaurant for traditional Saudi seating floor rooms serving Madghout, Saleeg, and lamb dishes.",
       location: "Al Aziziya",
@@ -230,25 +230,25 @@ export const meccaData: City = {
   transportation: [
     {
       type: "King Abdulaziz International Airport (Jeddah - JED)",
-      image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Main international gateway 80km west of Mecca. Terminal 1 features a direct high-speed railway station.",
       cost: "Airport train: 70 SAR / Taxi: 200 - 250 SAR"
     },
     {
       type: "Haramain High-Speed Railway",
-      image: "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/258510/pexels-photo-258510.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "State-of-the-art 300 km/h electric bullet train connecting Mecca Station to Jeddah Airport (43 min) and Medina (2h 15m).",
       cost: "70 - 150 SAR per ticket"
     },
     {
       type: "Uber & Careem Ride-Hailing Apps",
-      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/4606346/pexels-photo-4606346.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Uber and Careem operate extensively across Mecca with fixed digital pricing and card payments.",
       cost: "20 - 60 SAR per local city trip"
     },
     {
       type: "Public SAPTCO Buses & Shuttle Buses",
-      image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Free hotel shuttle buses run 24/7 along dedicated lanes connecting Aziziya hotels to Haram bus terminals.",
       cost: "Free hotel shuttles / 5 - 10 SAR SAPTCO"
     }
@@ -290,7 +290,7 @@ export const meccaData: City = {
   hiddenGems: [
     {
       name: "Kiswah Factory (King Abdulaziz Complex for Holy Kaaba Kiswah)",
-      image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The official state workshop in Umm al-Jood where master artisans weave gold and silver Quranic calligraphy into the black silk Kiswa that covers the Kaaba.",
       tip: "Visits can be arranged through registered tour groups."
     }
@@ -346,7 +346,7 @@ export const medinaData: City = {
   country: "Saudi Arabia",
   region: "Middle East",
   tagline: "The City of the Prophet, peaceful sanctuaries, and Al-Masjid an-Nabawi",
-  heroImage: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=80",
+  heroImage: "https://images.pexels.com/photos/12313656/pexels-photo-12313656.jpeg?auto=compress&cs=tinysrgb&w=1200",
   description: "Navigate Medina like a local. Guide to Al-Masjid an-Nabawi, Rawdah, Quba Mosque, Mount Uhud, date markets, and transit.",
   seoTitle: "Medina Travel Guide: The Prophet's Mosque & Sacred Heritage | LocTravel",
   seoDescription: "An expert content guide to Medina. Discover Al-Masjid an-Nabawi, Rawdah, Quba Mosque, Mount Uhud, Ajwa dates, and travel tips.",
@@ -386,7 +386,7 @@ export const medinaData: City = {
   attractions: [
     {
       name: "Al-Masjid an-Nabawi (The Prophet's Mosque)",
-      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/12313656/pexels-photo-12313656.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The sprawling sanctuary featuring 250 retractable giant umbrella canopies, marble courtyards, and the sacred Green Dome.",
       duration: "4 to 6 hours",
       cost: "Free",
@@ -394,7 +394,7 @@ export const medinaData: City = {
     },
     {
       name: "Quba Mosque (First Mosque in Islam)",
-      image: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/337904/pexels-photo-337904.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The historic mosque whose foundation stone was laid by Prophet Muhammad upon arriving in Medina. Praying two units of prayer here carries the reward of an Umrah.",
       duration: "2 hours",
       cost: "Free",
@@ -402,7 +402,7 @@ export const medinaData: City = {
     },
     {
       name: "Mount Uhud & Archers' Hill (Jabal Rumaat)",
-      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The famous granite mountain north of Medina, site of the historic Battle of Uhud (625 AD) and burial place of the Martyrs of Uhud including Hamza ibn Abdul-Muttalib.",
       duration: "2 hours",
       cost: "Free",
@@ -410,7 +410,7 @@ export const medinaData: City = {
     },
     {
       name: "Al Qiblatain Mosque (Mosque of the Two Qiblas)",
-      image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2180803/pexels-photo-2180803.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The historic mosque where the qibla (direction of prayer) was divine revealed to change from Jerusalem toward the Kaaba in Mecca.",
       duration: "1.5 hours",
       cost: "Free",
@@ -418,7 +418,7 @@ export const medinaData: City = {
     },
     {
       name: "Seven Mosques (Al-Masajid As-Sab'ah)",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "A complex of small historic mosques situated on the western slope of Mount Sela, site of the famous Battle of the Trench (Khandaq).",
       duration: "2 hours",
       cost: "Free",
@@ -426,7 +426,7 @@ export const medinaData: City = {
     },
     {
       name: "Dar Al Madinah Museum",
-      image: "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "A specialized museum displaying interactive 3D scale models of Medina’s urban development and Islamic history from the prophetic era to present day.",
       duration: "2 hours",
       cost: "25 SAR",
@@ -434,7 +434,7 @@ export const medinaData: City = {
     },
     {
       name: "Jannat al-Baqi (Baqi Cemetery)",
-      image: "https://images.unsplash.com/photo-1509316975850-ff9c5edd0cd9?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "The main historic cemetery adjacent to Al-Masjid an-Nabawi where many members of the Prophet's family, wives, and thousands of Companions are buried.",
       duration: "1 hour",
       cost: "Free",
@@ -442,7 +442,7 @@ export const medinaData: City = {
     },
     {
       name: "Medina Central Date Market",
-      image: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/4033324/pexels-photo-4033324.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Bustling traditional market featuring over 150 date varieties, including Medina's world-famous dark Ajwa dates, Safawi, and Anbara dates.",
       duration: "1.5 hours",
       cost: "Free to browse",
@@ -468,19 +468,19 @@ export const medinaData: City = {
   food: [
     {
       name: "Medina Ajwa Dates & Saudi Coffee (Gahwa)",
-      image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/4033324/pexels-photo-4033324.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Soft, dark Ajwa dates grown in Medina palm groves, paired with golden cardamom-scented Saudi Arabic coffee.",
       recommendation: "Purchase fresh dates at the Central Date Market near Quba."
     },
     {
       name: "Madinah Mint Tea & Fresh Bread",
-      image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Fragrant organic mint tea brewed with famous Madinah Hasawi mint, served alongside warm sesame flatbread.",
       recommendation: "Enjoy at cafes along Quba Avenue."
     },
     {
       name: "Saudi Saleeg Rice",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Comforting creamy short-grain rice cooked in chicken broth and milk, seasoned with ghee and cardamom, served with roasted chicken.",
       recommendation: "Try at Al-Romansiah Medina."
     }
@@ -489,21 +489,21 @@ export const medinaData: City = {
   whereToStay: [
     {
       area: "Northern Central Markaziyah",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Prime pedestrian plaza zone directly facing the main gates of Al-Masjid an-Nabawi.",
       priceRange: "$$$$ (5-Star Luxury)",
       recommendation: "Dar Al Taqwa, Oberoi Madina, and Pullman Zamzam Madina."
     },
     {
       area: "Southern Markaziyah",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Lively commercial hotel district within 3–5 minutes walking distance to the Prophet's Mosque.",
       priceRange: "$$$ (Mid-Range & Luxury)",
       recommendation: "Anwar Al Madinah Movenpick and Crown Plaza Madinah."
     },
     {
       area: "Quba Road & King Fahd District",
-      image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Peaceful residential neighborhood 10 minutes from the Haram, offering modern budget hotels and easy bus transit.",
       priceRange: "$$ (Budget-Friendly)",
       recommendation: "Ideal for longer stays and quiet family travel."
@@ -513,7 +513,7 @@ export const medinaData: City = {
   bestRestaurants: [
     {
       name: "Arabesque Restaurant",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Middle Eastern & International Buffet",
       description: "Upscale dining room offering direct view over the courtyards of the Prophet's Mosque.",
       location: "Northern Markaziyah",
@@ -521,7 +521,7 @@ export const medinaData: City = {
     },
     {
       name: "Albaik Medina (King Faisal Branch)",
-      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Saudi Broasted Fried Chicken",
       description: "Famous local branch serving iconic crisp chicken, fries, and garlic sauce.",
       location: "King Faisal Road",
@@ -529,7 +529,7 @@ export const medinaData: City = {
     },
     {
       name: "Town Pour Specialty Coffee",
-      image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800",
       cuisine: "Saudi Specialty Coffee & Bakery",
       description: "Modern specialty coffeehouse serving single-origin coffees and fresh pastries.",
       location: "Sultana Street",
@@ -540,19 +540,19 @@ export const medinaData: City = {
   transportation: [
     {
       type: "Madinah Prince Mohammad bin Abdulaziz Airport (MED)",
-      image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Modern international airport 15km northeast of Medina city center with quick taxi and shuttle links.",
       cost: "Airport bus: 10 SAR / Taxi: 50 - 70 SAR"
     },
     {
       type: "Haramain High-Speed Railway Station",
-      image: "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/258510/pexels-photo-258510.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Ultra-fast electric train station connecting Medina to Jeddah Airport (1h 50m) and Mecca (2h 15m).",
       cost: "150 SAR per ticket"
     },
     {
       type: "Uber & Careem Apps",
-      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/4606346/pexels-photo-4606346.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Uber and Careem operate extensively with reliable, fixed digital app pricing.",
       cost: "15 - 35 SAR per city ride"
     }
@@ -590,7 +590,7 @@ export const medinaData: City = {
   hiddenGems: [
     {
       name: "Quba Walkway Palm Oasis",
-      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.pexels.com/photos/240526/pexels-photo-240526.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Tranquil palm date groves situated right alongside the pedestrian avenue between the two main mosques.",
       tip: "Visit at sunset for cool mountain breezes."
     }
