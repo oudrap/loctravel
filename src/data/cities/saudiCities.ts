@@ -54,7 +54,7 @@ export const meccaData: City = {
     },
     {
       name: "The Sacred Kaaba",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80",
       description: "The black silk kiswa-draped cubic sanctuary built by Prophet Ibrahim and Ismail. Pilgrims perform Tawaf by circumambulating seven times anti-clockwise around it.",
       duration: "1 to 2 hours",
       cost: "Free",
@@ -171,18 +171,21 @@ export const meccaData: City = {
   whereToStay: [
     {
       area: "Abraj Al Bait & King Abdulaziz Gate Zone",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
       description: "Luxury skyscraper hotels connected directly to Al-Masjid al-Haram with direct floor access into prayer halls.",
       priceRange: "$$$$ (5-Star Luxury)",
       recommendation: "Pullman ZamZam Makkah, Swissôtel Makkah, and Raffles Makkah Palace."
     },
     {
       area: "Ibrahim Al Khalil Street",
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
       description: "Lively boulevard within 5–10 minutes walking distance of the Haram, lined with dining and shopping.",
       priceRange: "$$$ (Mid-Range & Premier)",
       recommendation: "Hilton Suites Makkah and Dar Al Taqwa."
     },
     {
       area: "Aziziya District",
+      image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
       description: "Modern district located 10 minutes east of the Haram, featuring affordable hotels connected by frequent shuttle buses.",
       priceRange: "$$ (Budget-Friendly)",
       recommendation: "Ideal for longer stays and budget-conscious Umrah travelers."
@@ -192,6 +195,7 @@ export const meccaData: City = {
   bestRestaurants: [
     {
       name: "Albaik (Abraj Al Bait Branch)",
+      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80",
       cuisine: "Saudi Broasted Fast Casual",
       description: "Iconic Saudi restaurant chain famous for legendary garlic chicken and shrimp meals.",
       location: "Abraj Al Bait Mall, 4th Floor",
@@ -199,6 +203,7 @@ export const meccaData: City = {
     },
     {
       name: "Al-Tazaj",
+      image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80",
       cuisine: "Saudi BBQ Chicken",
       description: "Popular restaurant specializing in wood-charcoal grilled tender chicken served with garlic bread and tahini.",
       location: "Ibrahim Al Khalil Street",
@@ -206,6 +211,7 @@ export const meccaData: City = {
     },
     {
       name: "Feldsaish Restaurant",
+      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
       cuisine: "Traditional Arabian & Mandi",
       description: "Spacious family dining room serving classic Saudi Kabsa, lamb Mandi, and grilled kebabs.",
       location: "Near King Abdul Aziz Road",
@@ -213,6 +219,7 @@ export const meccaData: City = {
     },
     {
       name: "Al-Romansiah",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
       cuisine: "Authentic Saudi Cuisine",
       description: "Renowned restaurant for traditional Saudi seating floor rooms serving Madghout, Saleeg, and lamb dishes.",
       location: "Al Aziziya",
@@ -223,21 +230,25 @@ export const meccaData: City = {
   transportation: [
     {
       type: "King Abdulaziz International Airport (Jeddah - JED)",
+      image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80",
       description: "Main international gateway 80km west of Mecca. Terminal 1 features a direct high-speed railway station.",
       cost: "Airport train: 70 SAR / Taxi: 200 - 250 SAR"
     },
     {
       type: "Haramain High-Speed Railway",
+      image: "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=800&q=80",
       description: "State-of-the-art 300 km/h electric bullet train connecting Mecca Station to Jeddah Airport (43 min) and Medina (2h 15m).",
       cost: "70 - 150 SAR per ticket"
     },
     {
       type: "Uber & Careem Ride-Hailing Apps",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80",
       description: "Uber and Careem operate extensively across Mecca with fixed digital pricing and card payments.",
       cost: "20 - 60 SAR per local city trip"
     },
     {
       type: "Public SAPTCO Buses & Shuttle Buses",
+      image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80",
       description: "Free hotel shuttle buses run 24/7 along dedicated lanes connecting Aziziya hotels to Haram bus terminals.",
       cost: "Free hotel shuttles / 5 - 10 SAR SAPTCO"
     }
@@ -478,18 +489,21 @@ export const medinaData: City = {
   whereToStay: [
     {
       area: "Northern Central Markaziyah",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
       description: "Prime pedestrian plaza zone directly facing the main gates of Al-Masjid an-Nabawi.",
       priceRange: "$$$$ (5-Star Luxury)",
       recommendation: "Dar Al Taqwa, Oberoi Madina, and Pullman Zamzam Madina."
     },
     {
       area: "Southern Markaziyah",
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
       description: "Lively commercial hotel district within 3–5 minutes walking distance to the Prophet's Mosque.",
       priceRange: "$$$ (Mid-Range & Luxury)",
       recommendation: "Anwar Al Madinah Movenpick and Crown Plaza Madinah."
     },
     {
       area: "Quba Road & King Fahd District",
+      image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
       description: "Peaceful residential neighborhood 10 minutes from the Haram, offering modern budget hotels and easy bus transit.",
       priceRange: "$$ (Budget-Friendly)",
       recommendation: "Ideal for longer stays and quiet family travel."
@@ -499,6 +513,7 @@ export const medinaData: City = {
   bestRestaurants: [
     {
       name: "Arabesque Restaurant",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
       cuisine: "Middle Eastern & International Buffet",
       description: "Upscale dining room offering direct view over the courtyards of the Prophet's Mosque.",
       location: "Northern Markaziyah",
@@ -506,6 +521,7 @@ export const medinaData: City = {
     },
     {
       name: "Albaik Medina (King Faisal Branch)",
+      image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80",
       cuisine: "Saudi Broasted Fried Chicken",
       description: "Famous local branch serving iconic crisp chicken, fries, and garlic sauce.",
       location: "King Faisal Road",
@@ -513,6 +529,7 @@ export const medinaData: City = {
     },
     {
       name: "Town Pour Specialty Coffee",
+      image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80",
       cuisine: "Saudi Specialty Coffee & Bakery",
       description: "Modern specialty coffeehouse serving single-origin coffees and fresh pastries.",
       location: "Sultana Street",
@@ -523,16 +540,19 @@ export const medinaData: City = {
   transportation: [
     {
       type: "Madinah Prince Mohammad bin Abdulaziz Airport (MED)",
+      image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80",
       description: "Modern international airport 15km northeast of Medina city center with quick taxi and shuttle links.",
       cost: "Airport bus: 10 SAR / Taxi: 50 - 70 SAR"
     },
     {
       type: "Haramain High-Speed Railway Station",
+      image: "https://images.unsplash.com/photo-1532105956626-9569c03602f6?auto=format&fit=crop&w=800&q=80",
       description: "Ultra-fast electric train station connecting Medina to Jeddah Airport (1h 50m) and Mecca (2h 15m).",
       cost: "150 SAR per ticket"
     },
     {
       type: "Uber & Careem Apps",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80",
       description: "Uber and Careem operate extensively with reliable, fixed digital app pricing.",
       cost: "15 - 35 SAR per city ride"
     }

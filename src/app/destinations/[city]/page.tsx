@@ -337,19 +337,31 @@ export default async function CityGuidePage({ params }: Props) {
                 {(city.whereToStay || []).map((stay, index) => (
                   <div
                     key={index}
-                    className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 flex flex-col justify-between"
+                    className="rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between"
                   >
-                    <div className="space-y-2">
-                      <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                        {stay.priceRange}
-                      </span>
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-1">{stay.area}</h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                        {stay.description}
-                      </p>
-                    </div>
-                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 italic">
-                      {stay.recommendation}
+                    {stay.image && (
+                      <div className="h-44 relative overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={stay.image}
+                          alt={stay.area}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                          {stay.priceRange}
+                        </span>
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-1">{stay.area}</h3>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                          {stay.description}
+                        </p>
+                      </div>
+                      <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 italic">
+                        {stay.recommendation}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -365,22 +377,34 @@ export default async function CityGuidePage({ params }: Props) {
                 {(city.bestRestaurants || []).map((restaurant, index) => (
                   <div
                     key={index}
-                    className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-3 flex flex-col justify-between"
+                    className="rounded-3xl overflow-hidden bg-slate-900 text-white border border-slate-800 space-y-3 flex flex-col justify-between"
                   >
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-start gap-2">
-                        <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                          {restaurant.cuisine}
-                        </span>
-                        <span className="text-xs font-bold text-slate-300 font-mono">{restaurant.priceRange}</span>
+                    {restaurant.image && (
+                      <div className="h-44 relative overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={restaurant.image}
+                          alt={restaurant.name}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <h3 className="text-lg font-bold text-white pt-1">{restaurant.name}</h3>
-                      <p className="text-xs text-slate-300 font-light leading-relaxed">
-                        {restaurant.description}
-                      </p>
-                    </div>
-                    <div className="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800">
-                      📍 {restaurant.location}
+                    )}
+                    <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-start gap-2">
+                          <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                            {restaurant.cuisine}
+                          </span>
+                          <span className="text-xs font-bold text-slate-300 font-mono">{restaurant.priceRange}</span>
+                        </div>
+                        <h3 className="text-lg font-bold text-white pt-1">{restaurant.name}</h3>
+                        <p className="text-xs text-slate-300 font-light leading-relaxed">
+                          {restaurant.description}
+                        </p>
+                      </div>
+                      <div className="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800">
+                        📍 {restaurant.location}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -396,16 +420,30 @@ export default async function CityGuidePage({ params }: Props) {
                 {city.transportation.map((option, index) => (
                   <div
                     key={index}
-                    className="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3"
+                    className="rounded-3xl overflow-hidden bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3 flex flex-col justify-between"
                   >
-                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-mono">
-                      {option.type}
-                    </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                      {option.description}
-                    </p>
-                    <div className="pt-2 border-t border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-900 dark:text-white">
-                      Cost: {option.cost}
+                    {option.image && (
+                      <div className="h-44 relative overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={option.image}
+                          alt={option.type}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-mono">
+                          {option.type}
+                        </div>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                          {option.description}
+                        </p>
+                      </div>
+                      <div className="pt-2 border-t border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-900 dark:text-white">
+                        Cost: {option.cost}
+                      </div>
                     </div>
                   </div>
                 ))}

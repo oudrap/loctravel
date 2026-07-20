@@ -28,6 +28,7 @@ export interface FoodItem {
 
 export interface Accommodation {
   area: string;
+  image?: string;
   description: string;
   priceRange: string; // e.g. "$$ (Budget-Friendly)" or "$$$ (Boutique & Luxury)"
   recommendation: string;
@@ -35,6 +36,7 @@ export interface Accommodation {
 
 export interface Restaurant {
   name: string;
+  image?: string;
   cuisine: string;
   description: string;
   location: string;
@@ -55,6 +57,7 @@ export interface BudgetTip {
 
 export interface TransportationOption {
   type: string;
+  image?: string;
   description: string;
   cost: string;
 }
