@@ -393,7 +393,7 @@ export const tangierData: City = {
   attractions: [
     {
       name: "Caves of Hercules (Grotte d'Hercule)",
-      image: "https://images.unsplash.com/photo-1572252821143-035b80459527?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
       description: "Dramatic sea cave with an ocean opening shaped like the map of Africa.",
       duration: "1.5 hours",
       cost: "60 MAD",
@@ -470,7 +470,7 @@ export const tangierData: City = {
   hiddenGems: [
     {
       name: "Cap Spartel Lighthouse",
-      image: "https://images.unsplash.com/photo-1572252821143-035b80459527?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
       description: "The exact meeting point of the Atlantic Ocean and Mediterranean Sea.",
       tip: "Visit the surrounding pine forest trails after seeing the lighthouse."
     }
@@ -591,7 +591,7 @@ export const agadirData: City = {
   hiddenGems: [
     {
       name: "Paradise Valley",
-      image: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
       description: "A stunning mountain gorge 40 minutes inland featuring natural emerald swimming pools and palm trees.",
       tip: "Wear hiking shoes and bring water for the valley walk."
     }
@@ -712,7 +712,7 @@ export const chefchaouenData: City = {
   hiddenGems: [
     {
       name: "Ras El Maa Waterfall",
-      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&w=800&q=80",
       description: "A fresh mountain spring stream at the edge of the medina where locals wash rugs and cool off.",
       tip: "Sip fresh orange juice at riverside cafes here."
     }
