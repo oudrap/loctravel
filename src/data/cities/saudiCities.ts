@@ -13,7 +13,7 @@ export const meccaData: City = {
   lat: 21.3891,
   lon: 39.8579,
   currency: "Saudi Riyal (SAR / ﷼)",
-  language: "Arabic (English widely spoken)",
+  language: "Arabic",
   timezone: "AST (UTC+3)",
 
   overview: [
@@ -134,7 +134,7 @@ export const medinaData: City = {
   lat: 24.5247,
   lon: 39.5692,
   currency: "Saudi Riyal (SAR / ﷼)",
-  language: "Arabic (English widely spoken)",
+  language: "Arabic",
   timezone: "AST (UTC+3)",
 
   overview: [

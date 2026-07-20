@@ -13,7 +13,7 @@ export const casablancaData: City = {
   lat: 33.5731,
   lon: -7.5898,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic, French",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
 
   overview: [
@@ -134,7 +134,7 @@ export const rabatData: City = {
   lat: 34.0209,
   lon: -6.8416,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic, French",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
 
   overview: [
@@ -255,7 +255,7 @@ export const fesData: City = {
   lat: 34.0331,
   lon: -5.0003,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic, French",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
 
   overview: [
@@ -376,7 +376,7 @@ export const tangierData: City = {
   lat: 35.7595,
   lon: -5.8340,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic, Spanish, French",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
 
   overview: [
@@ -497,7 +497,7 @@ export const agadirData: City = {
   lat: 30.4278,
   lon: -9.5981,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic, Berber (Tamazight), French",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
 
   overview: [
@@ -618,7 +618,7 @@ export const chefchaouenData: City = {
   lat: 35.1716,
   lon: -5.2697,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic, Spanish",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
 
   overview: [

@@ -13,7 +13,7 @@ export const penangData: City = {
   lat: 5.4164,
   lon: 100.3327,
   currency: "Malaysian Ringgit (MYR / RM)",
-  language: "Malay, English, Hokkien, Mandarin",
+  language: "Malay",
   timezone: "MYT (UTC+8)",
 
   overview: [
@@ -134,7 +134,7 @@ export const langkawiData: City = {
   lat: 6.3500,
   lon: 99.8000,
   currency: "Malaysian Ringgit (MYR / RM)",
-  language: "Malay, English",
+  language: "Malay",
   timezone: "MYT (UTC+8)",
 
   overview: [
@@ -255,7 +255,7 @@ export const jakartaData: City = {
   lat: -6.2088,
   lon: 106.8456,
   currency: "Indonesian Rupiah (IDR / Rp)",
-  language: "Indonesian (Bahasa Indonesia)",
+  language: "Indonesian",
   timezone: "WIB (UTC+7)",
 
   overview: [

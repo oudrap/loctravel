@@ -13,7 +13,7 @@ export const antalyaData: City = {
   lat: 36.8969,
   lon: 30.7133,
   currency: "Turkish Lira (TRY / ₺)",
-  language: "Turkish (English widely spoken)",
+  language: "Turkish",
   timezone: "TRT (UTC+3)",
 
   overview: [
@@ -134,7 +134,7 @@ export const cappadociaData: City = {
   lat: 38.6431,
   lon: 34.8289,
   currency: "Turkish Lira (TRY / ₺)",
-  language: "Turkish (English widely spoken)",
+  language: "Turkish",
   timezone: "TRT (UTC+3)",
 
   overview: [
