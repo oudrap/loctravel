@@ -13,7 +13,7 @@ export const marrakechData: City = {
   lat: 31.6295,
   lon: -7.9811,
   currency: "Moroccan Dirham (MAD)",
-  language: "Arabic & French",
+  language: "Arabic",
   timezone: "WEST (UTC+1)",
   overview: [
     "Marrakech, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces, and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire, with mazelike alleys where thriving souks (marketplaces) sell traditional textiles, pottery, and jewelry.",
@@ -125,7 +125,7 @@ export const dubaiData: City = {
   lat: 25.2048,
   lon: 55.2708,
   currency: "UAE Dirham (AED)",
-  language: "Arabic & English",
+  language: "Arabic",
   timezone: "GST (UTC+4)",
   overview: [
     "Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture, and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with music-choreographed water shows.",
@@ -295,7 +295,7 @@ export const barcelonaData: City = {
   lat: 41.3851,
   lon: 2.1734,
   currency: "Euro (EUR / €)",
-  language: "Spanish & Catalan",
+  language: "Spanish",
   timezone: "CET (UTC+1 / UTC+2 in summer)",
   overview: [
     "Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city.",

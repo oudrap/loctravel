@@ -48,8 +48,13 @@ export default function HeroCityCards({
     return () => clearInterval(interval);
   }, [timezoneOffsetSeconds]);
 
+  // Extract primary native language if string contains multiple languages (e.g. "Arabic & French" -> "Arabic")
+  const primaryLanguage = language
+    ? language.split("&")[0].split(",")[0].trim()
+    : "Local Language";
+
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 pt-4 border-t border-white/10 w-full text-xs">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-4 border-t border-white/10 w-full text-xs">
       {/* 1. Currency */}
       <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex flex-col justify-between">
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
@@ -58,12 +63,12 @@ export default function HeroCityCards({
         <span className="font-semibold text-white truncate pt-1">{currency}</span>
       </div>
 
-      {/* 2. Language */}
+      {/* 2. Primary Native Language */}
       <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex flex-col justify-between">
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
           <span>🗣️</span> Language
         </span>
-        <span className="font-semibold text-white truncate pt-1">{language}</span>
+        <span className="font-semibold text-white truncate pt-1">{primaryLanguage}</span>
       </div>
 
       {/* 3. Country */}
@@ -82,29 +87,24 @@ export default function HeroCityCards({
         <span className="font-mono font-bold text-white pt-1">{liveTime || "--:--"}</span>
       </div>
 
-      {/* 5. Temperature */}
+      {/* 5. Combined Weather Card (Icon + Temp + Condition) */}
       <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex flex-col justify-between">
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
-          <span>🌡️</span> Temp
+          <span>🌤</span> Weather
         </span>
-        <span className="font-bold text-white pt-1">{temp !== null && temp !== undefined ? `${temp}°C` : "--°C"}</span>
-      </div>
-
-      {/* 6. Weather Condition */}
-      <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex flex-col justify-between">
-        <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
-          <span>☁️</span> Weather
-        </span>
-        <span className="font-semibold text-white truncate pt-1 flex items-center gap-1">
+        <span className="font-bold text-white truncate pt-1 flex items-center gap-1.5">
           {weatherIcon && (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={weatherIcon} alt="" className="w-4 h-4 object-contain inline shrink-0" />
           )}
-          <span className="capitalize truncate">{condition || "Clear"}</span>
+          <span className="truncate">
+            {temp !== null && temp !== undefined ? `${temp}°C` : "--°C"}
+            {condition ? ` • ${condition}` : ""}
+          </span>
         </span>
       </div>
 
-      {/* 7. Timezone */}
+      {/* 6. Timezone */}
       <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex flex-col justify-between">
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
           <span>📍</span> Timezone
