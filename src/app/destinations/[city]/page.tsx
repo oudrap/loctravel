@@ -122,8 +122,8 @@ export default async function CityGuidePage({ params }: Props) {
 
           {/* Quick City Info Cards */}
           <HeroCityCards
-            currency={city.currency || "Local Currency"}
-            language={city.language || "Local Language"}
+            currency={city.currency || ""}
+            language={city.language || ""}
             country={city.country}
             timezone={weather?.timezoneFormatted || city.timezone || "UTC"}
             timezoneOffsetSeconds={weather?.timezoneOffset || 0}

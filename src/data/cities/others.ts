@@ -12,6 +12,9 @@ export const marrakechData: City = {
   seoDescription: "Explore Marrakech with our local travel guide. Get tips on souks, Moroccan cuisine, budget stays, safety, and cultural etiquette.",
   lat: 31.6295,
   lon: -7.9811,
+  currency: "Moroccan Dirham (MAD)",
+  language: "Arabic & French",
+  timezone: "WEST (UTC+1)",
   overview: [
     "Marrakech, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces, and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire, with mazelike alleys where thriving souks (marketplaces) sell traditional textiles, pottery, and jewelry.",
     "To see the authentic side of Marrakech, escape the heavy tourist hubs. Spend time sipping mint tea on a terrace overlooking the medina at dusk, stay in a family-run riad, and explore the ancient Mellah (Jewish Quarter) where history breathes through every wall."
@@ -121,6 +124,9 @@ export const dubaiData: City = {
   seoDescription: "An expert, content-first guide to Dubai. Explore the Burj Khalifa, traditional souks, food hotspots, local transportation, and safety tips.",
   lat: 25.2048,
   lon: 55.2708,
+  currency: "UAE Dirham (AED)",
+  language: "Arabic & English",
+  timezone: "GST (UTC+4)",
   overview: [
     "Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture, and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with music-choreographed water shows.",
     "Yet, beneath the glittering skyscrapers lies a rich cultural heritage. Cross the Creek on a traditional abra boat, bargain for spices in Deira, and taste authentic Emirati cuisine in historical courtyards to discover the true soul of Dubai."
@@ -203,6 +209,9 @@ export const newyorkData: City = {
   seoDescription: "An expert, content-rich travel guide to New York City. Learn about best eats, Central Park, dynamic boroughs, subways, and budget tips.",
   lat: 40.7128,
   lon: -74.0060,
+  currency: "US Dollar (USD / $)",
+  language: "English",
+  timezone: "EST (UTC-5 / UTC-4 in summer)",
   overview: [
     "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that's among the world's major commercial, financial, and cultural centers. Its iconic sites include skyscrapers like the Empire State Building and sprawling Central Park.",
     "To see the authentic NYC, cross the East River. Explore the diverse food joints in Queens, walk the brownstone-lined streets of Brooklyn, and catch a local jazz set in Harlem. This guide brings you the local's perspective on the Big Apple."
@@ -285,6 +294,9 @@ export const barcelonaData: City = {
   seoDescription: "An expert local guide to Barcelona. Get tips on Sagrada Família, local tapas, Gothic Quarter gems, public transit, and budget hacks.",
   lat: 41.3851,
   lon: 2.1734,
+  currency: "Euro (EUR / €)",
+  language: "Spanish & Catalan",
+  timezone: "CET (UTC+1 / UTC+2 in summer)",
   overview: [
     "Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city.",
     "To see the authentic Barcelona, avoid the crowded tourist strip of La Rambla. Wander into the narrow streets of El Born, sit in quiet squares in Gràcia, and eat tapas at neighborhood bodegas where Catalans gather."
@@ -359,6 +371,9 @@ export const romeData: City = {
   seoDescription: "An expert guide to Rome. Discover the Colosseum, historic piazzas, pasta hotspots, budget tips, safety advice, and local history.",
   lat: 41.9028,
   lon: 12.4964,
+  currency: "Euro (EUR / €)",
+  language: "Italian",
+  timezone: "CET (UTC+1 / UTC+2 in summer)",
   overview: [
     "Rome, Italy’s capital, is a sprawling, cosmopolitan city with nearly 3,000 years of globally influential art, architecture, and culture on display. Ancient ruins such as the Forum and the Colosseum evoke the power of the former Roman Empire.",
     "But Rome is also a city of quiet moments. Sit on a stone step in Trastevere as street musicians play, drink cold water from a public nasone fountain, and wander through Testaccio market to experience the Rome that locals love."
@@ -433,6 +448,9 @@ export const londonData: City = {
   seoDescription: "An expert local guide to London. Discover top attractions, royal sights, free national museums, public transit hacks, and safety advice.",
   lat: 51.5074,
   lon: -0.1278,
+  currency: "British Pound (GBP / £)",
+  language: "English",
+  timezone: "GMT (UTC+0 / UTC+1 in summer)",
   overview: [
     "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its center stand the imposing Houses of Parliament, the iconic 'Big Ben' clock tower, and Westminster Abbey.",
     "To see the real London, step outside Zone 1. Grab food at Borough Market, walk the peaceful canals of Little Venice, and sit by a fire in a centuries-old pub in Hampstead to experience the city like a Londoner."
@@ -507,6 +525,9 @@ export const istanbulData: City = {
   seoDescription: "An expert local guide to Istanbul. Get tips on mosques, Bosphorus ferries, Turkish coffee, budget tricks, safety, and cultural manners.",
   lat: 41.0082,
   lon: 28.9784,
+  currency: "Turkish Lira (TRY / ₺)",
+  language: "Turkish",
+  timezone: "TRT (UTC+3)",
   overview: [
     "Istanbul is a major city in Turkey that straddles Europe and Asia across the Bosphorus Strait. Its Old City reflects cultural influences of the many empires that once ruled here. In Sultanahmet, the open-air Roman-era Hippodrome was for centuries the site of chariot races.",
     "But to see the pulse of modern Istanbul, leave Sultanahmet. Cross the Galata Bridge, explore the hipster cafes of Kadikoy on the Asian side, and take a public ferry at sunset to see why this city has captivated travelers for thousands of years."

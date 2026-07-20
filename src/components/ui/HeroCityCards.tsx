@@ -55,7 +55,7 @@ export default function HeroCityCards({
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
           <span>💰</span> Currency
         </span>
-        <span className="font-semibold text-white truncate pt-1">{currency || "Local Currency"}</span>
+        <span className="font-semibold text-white truncate pt-1">{currency}</span>
       </div>
 
       {/* 2. Language */}
@@ -63,7 +63,7 @@ export default function HeroCityCards({
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
           <span>🗣️</span> Language
         </span>
-        <span className="font-semibold text-white truncate pt-1">{language || "Local Language"}</span>
+        <span className="font-semibold text-white truncate pt-1">{language}</span>
       </div>
 
       {/* 3. Country */}
@@ -109,7 +109,7 @@ export default function HeroCityCards({
         <span className="text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1">
           <span>📍</span> Timezone
         </span>
-        <span className="font-mono font-semibold text-white truncate pt-1">{timezone || "UTC"}</span>
+        <span className="font-mono font-semibold text-white truncate pt-1">{timezone}</span>
       </div>
     </div>
   );
