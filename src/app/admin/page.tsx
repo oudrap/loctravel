@@ -6,6 +6,10 @@ import { cities as initialCities } from "@/data/cities";
 import { blogArticles as initialBlogArticles } from "@/data/blog";
 import { City, BlogArticle, Attraction, Accommodation, Restaurant, FAQItem, TransportationOption } from "@/types/travel";
 
+// Import reusable Admin components
+import Sidebar from "@/components/admin/Sidebar";
+import Header from "@/components/admin/Header";
+
 export default function AdminDashboard() {
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -69,7 +73,7 @@ export default function AdminDashboard() {
   const [uploadUrl, setUploadUrl] = useState("");
 
   // Last Updated timestamp mockup
-  const [lastUpdated, setLastUpdated] = useState("2026-07-21 23:25");
+  const [lastUpdated, setLastUpdated] = useState("2026-07-22 01:40");
 
   // Handle Login
   const handleLogin = (e: React.FormEvent) => {
@@ -259,65 +263,23 @@ export default function AdminDashboard() {
         </div>
       ) : (
         <>
-          {/* Admin Topbar */}
-          <header className="h-16 bg-slate-900 border-b border-slate-800 flex items-center justify-between px-6 sticky top-0 z-30 shrink-0">
-            <div className="flex items-center gap-3">
-              <span className="text-xl">🛡️</span>
-              <span className="font-extrabold text-white font-display tracking-tight text-lg">
-                {settings.siteName} <span className="text-emerald-400 text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 ml-2">ADMIN</span>
-              </span>
-            </div>
-            <div className="flex items-center gap-4 text-xs">
-              <div className="hidden sm:flex items-center gap-2 text-slate-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Last change: <span className="font-mono text-white font-semibold">{lastUpdated}</span></span>
-              </div>
-              <button 
-                onClick={() => setIsAuthenticated(false)}
-                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-red-500/20 hover:text-red-400 transition-colors border border-slate-700 font-bold"
-              >
-                Logout
-              </button>
-            </div>
-          </header>
+          {/* Header Component */}
+          <Header 
+            siteName={settings.siteName} 
+            lastUpdated={lastUpdated} 
+            onLogout={() => setIsAuthenticated(false)} 
+          />
 
           <div className="flex flex-1 overflow-hidden">
-            {/* Sidebar Navigation */}
-            <aside className="w-64 bg-slate-900 border-r border-slate-800 p-4 space-y-6 hidden md:block shrink-0 overflow-y-auto">
-              <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500 pl-3">Navigation</span>
-                <nav className="space-y-1">
-                  {[
-                    { tab: "dashboard", icon: "📊", label: "Dashboard" },
-                    { tab: "cities", icon: "🌍", label: "Cities" },
-                    { tab: "media", icon: "🖼️", label: "Media Library" },
-                    { tab: "blog", icon: "✍️", label: "Blog articles" },
-                    { tab: "users", icon: "👥", label: "Writers / Users" },
-                    { tab: "ads", icon: "💰", label: "Ads Placements" },
-                    { tab: "affiliate", icon: "🔗", label: "Affiliate Codes" },
-                    { tab: "seo", icon: "📈", label: "Global SEO" },
-                    { tab: "settings", icon: "⚙️", label: "Settings" }
-                  ].map((item) => (
-                    <button
-                      key={item.tab}
-                      onClick={() => {
-                        setActiveTab(item.tab as any);
-                        setEditingCity(null);
-                        setEditingBlog(null);
-                      }}
-                      className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-semibold transition-colors text-left ${
-                        activeTab === item.tab && !editingCity && !editingBlog
-                          ? "bg-emerald-500/10 text-emerald-400 border-l-4 border-emerald-500"
-                          : "text-slate-400 hover:bg-slate-800 hover:text-slate-200"
-                      }`}
-                    >
-                      <span className="text-base">{item.icon}</span>
-                      {item.label}
-                    </button>
-                  ))}
-                </nav>
-              </div>
-            </aside>
+            {/* Sidebar Component */}
+            <Sidebar 
+              activeTab={activeTab} 
+              setActiveTab={setActiveTab} 
+              onCloseEdit={() => {
+                setEditingCity(null);
+                setEditingBlog(null);
+              }} 
+            />
 
             {/* Main Dashboard Area */}
             <main className="flex-1 p-6 md:p-10 space-y-10 overflow-y-auto">
@@ -341,7 +303,7 @@ export default function AdminDashboard() {
                       <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl" />
                       <span className="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Blog Posts</span>
                       <div className="text-4xl font-extrabold text-white font-display">{blogs.length}</div>
-                      <span className="text-[10px] text-emerald-400">Live on /blog</span>
+                      <span className="text-[10px] text-emerald-400 font-mono">Live on /blog</span>
                     </div>
                     <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-2 relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl" />
@@ -504,7 +466,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                   ) : (
-                    /* FULL SECTION EDITOR (Tabbed for 15 sections requested!) */
+                    /* FULL SECTION EDITOR */
                     <div className="space-y-6">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
                         <div className="space-y-1">
@@ -527,7 +489,7 @@ export default function AdminDashboard() {
                         </div>
                       </div>
 
-                      {/* Tab list of 15 Sections + Gallery */}
+                      {/* Tab list of 15 Sections */}
                       <div className="flex flex-wrap gap-1.5 border-b border-slate-800 pb-2">
                         {[
                           { tab: "hero", label: "1. Hero" },
@@ -654,7 +616,7 @@ export default function AdminDashboard() {
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                               {editingCity.attractions.map((attr, idx) => (
                                 attr.image ? (
-                                  <div key={idx} className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 group">
+                                  <div key={idx} className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-955 group">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img src={attr.image} alt="" className="w-full h-32 object-cover" />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-2 transition-opacity">
@@ -836,7 +798,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Type / Category</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Type</label>
                                     <input
                                       type="text"
                                       value={attr.type}
@@ -875,7 +837,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Why It's Famous (Optional)</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Why Famous</label>
                                     <input
                                       type="text"
                                       value={attr.whyFamous || ""}
@@ -888,7 +850,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Visitor Tip (Optional)</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Visitor Tip</label>
                                     <input
                                       type="text"
                                       value={attr.visitorTips || ""}
@@ -901,7 +863,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Approx Duration</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Duration</label>
                                     <input
                                       type="text"
                                       value={attr.duration}
@@ -1003,7 +965,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Image URL (Optional)</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Image URL</label>
                                     <input
                                       type="text"
                                       value={rest.image || ""}
@@ -1016,7 +978,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Price range ($-$$$$)</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Price</label>
                                     <input
                                       type="text"
                                       value={rest.priceRange}
@@ -1029,7 +991,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Location / Address</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Location</label>
                                     <input
                                       type="text"
                                       value={rest.location}
@@ -1120,7 +1082,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Area / Location Zone</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Area</label>
                                     <input
                                       type="text"
                                       value={stay.area}
@@ -1133,7 +1095,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Star Rating Badge</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Star Rating</label>
                                     <input
                                       type="text"
                                       value={stay.starRating || ""}
@@ -1159,7 +1121,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Price Category ($-$$$$)</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Price Category</label>
                                     <input
                                       type="text"
                                       value={stay.priceRange}
@@ -1172,7 +1134,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Best For Badge</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Best For</label>
                                     <input
                                       type="text"
                                       value={stay.bestFor || ""}
@@ -1198,7 +1160,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Local Recommendation Tip</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Local Recommendation</label>
                                     <input
                                       type="text"
                                       value={stay.recommendation}
@@ -1259,7 +1221,7 @@ export default function AdminDashboard() {
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Transit Type / Title</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Transit Title</label>
                                     <input
                                       type="text"
                                       value={option.type}
@@ -1272,7 +1234,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Image URL (Optional)</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Image URL</label>
                                     <input
                                       type="text"
                                       value={option.image || ""}
@@ -1399,7 +1361,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="space-y-1 sm:col-span-2">
-                                    <label className="text-[9px] uppercase font-bold text-slate-500">Local Tip / Recommendation</label>
+                                    <label className="text-[9px] uppercase font-bold text-slate-500">Tip / Recommendation</label>
                                     <input
                                       type="text"
                                       value={dish.recommendation}
@@ -1648,7 +1610,7 @@ export default function AdminDashboard() {
                                 />
                               </div>
                               <div className="space-y-1">
-                                <label className="text-[10px] uppercase font-bold text-slate-400">Slug Path (e.g. /destinations/city-slug)</label>
+                                <label className="text-[10px] uppercase font-bold text-slate-400">Slug Path</label>
                                 <input
                                   type="text"
                                   value={editingCity.slug}
@@ -1697,7 +1659,7 @@ export default function AdminDashboard() {
                         required
                         value={uploadUrl}
                         onChange={(e) => setUploadUrl(e.target.value)}
-                        placeholder="Enter direct image URL (e.g. https://images.pexels.com/photos/...) or DataURI..."
+                        placeholder="Enter direct image URL..."
                         className="flex-1 px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                       />
                       <select
@@ -1718,32 +1680,6 @@ export default function AdminDashboard() {
                       </button>
                     </div>
                   </form>
-
-                  {/* Media Search and Filter Toolbar */}
-                  <div className="flex flex-col sm:flex-row gap-4 items-center justify-between p-4 bg-slate-900 border border-slate-800 rounded-2xl">
-                    <input
-                      type="text"
-                      value={mediaSearch}
-                      onChange={(e) => setMediaSearch(e.target.value)}
-                      placeholder="Search image urls..."
-                      className="w-full sm:w-80 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    />
-
-                    <div className="flex items-center gap-2 w-full sm:w-auto">
-                      <span className="text-xs text-slate-400 shrink-0">Filter by City:</span>
-                      <select
-                        value={mediaCityFilter}
-                        onChange={(e) => setMediaCityFilter(e.target.value)}
-                        className="w-full sm:w-44 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                      >
-                        <option value="All">All Sites</option>
-                        <option value="blog">Blog Posts</option>
-                        {cities.map(c => (
-                          <option key={c.slug} value={c.slug}>{c.name}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
 
                   {/* Media Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -1915,7 +1851,7 @@ export default function AdminDashboard() {
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="text-[10px] uppercase font-bold text-slate-400">Read Time (e.g. 5 min read)</label>
+                            <label className="text-[10px] uppercase font-bold text-slate-400">Read Time</label>
                             <input
                               type="text"
                               value={editingBlog.readTime}
@@ -1933,7 +1869,7 @@ export default function AdminDashboard() {
                             />
                           </div>
                           <div className="space-y-1 sm:col-span-2">
-                            <label className="text-[10px] uppercase font-bold text-slate-400">Short Summary Excerpt</label>
+                            <label className="text-[10px] uppercase font-bold text-slate-400">Excerpt</label>
                             <input
                               type="text"
                               value={editingBlog.excerpt}
@@ -1942,7 +1878,7 @@ export default function AdminDashboard() {
                             />
                           </div>
                           <div className="space-y-1 sm:col-span-2">
-                            <label className="text-[10px] uppercase font-bold text-slate-400">Body Content (HTML Allowed)</label>
+                            <label className="text-[10px] uppercase font-bold text-slate-400">Body Content</label>
                             <textarea
                               rows={10}
                               value={editingBlog.content}
