@@ -6,7 +6,7 @@ export const meccaData: City = {
   country: "Saudi Arabia",
   region: "Middle East",
   tagline: "The holiest city in Islam, home to the sacred Kaaba and Al-Masjid al-Haram",
-  heroImage: "https://images.pexels.com/photos/12313658/pexels-photo-12313658.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Great_Mosque_of_Mecca.jpg",
   description: "Navigate Mecca like a local. Guide to Al-Masjid al-Haram, Kaaba, Hira Cave, Abraj Al Bait, Haramain train, hotels, and visitor tips.",
   seoTitle: "Mecca Travel Guide: The Ultimate Guide to Al-Masjid al-Haram & Umrah | LocTravel",
   seoDescription: "An expert content guide to Mecca, Saudi Arabia. Discover Al-Masjid al-Haram, the Kaaba, Abraj Al Bait, Cave of Hira, hotels, transportation, and travel tips.",
@@ -46,7 +46,7 @@ export const meccaData: City = {
   attractions: [
     {
       name: "Masjid al-Haram (The Sacred Mosque)",
-      image: "https://images.pexels.com/photos/12313658/pexels-photo-12313658.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Great_Mosque_of_Mecca.jpg",
       description: "The largest and holiest mosque in the world, capable of accommodating over 2.5 million worshippers across multi-tiered marble floors, vast courtyards, and air-conditioned prayer halls.",
       whyFamous: "It encloses the Kaaba, Maqam Ibrahim, Safa and Marwa hills, and the blessed Zamzam wells.",
       visitorTips: "Visit late at night (1:00 AM – 4:00 AM) or after Fajr for smoother pedestrian movement.",
@@ -56,7 +56,7 @@ export const meccaData: City = {
     },
     {
       name: "The Sacred Kaaba",
-      image: "https://images.pexels.com/photos/12313657/pexels-photo-12313657.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://upload.wikimedia.org/wikipedia/commons/5/52/Kaaba_Masjid_Haraam_Makkah.jpg",
       description: "The black silk kiswa-draped cubic structure located at the center of Al-Masjid al-Haram, built originally by Prophet Ibrahim and his son Ismail.",
       whyFamous: "The qibla (direction of prayer) for all Muslims around the world and the focal point of Tawaf circumambulation.",
       visitorTips: "Perform Tawaf on the upper floor decks when the ground Mataf plaza is crowded.",
@@ -66,7 +66,7 @@ export const meccaData: City = {
     },
     {
       name: "Abraj Al Bait (Makkah Clock Royal Tower)",
-      image: "https://images.pexels.com/photos/4388164/pexels-photo-4388164.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Abraj-al-Bait-towers.jpg",
       description: "A 601-meter iconic skyscraper complex facing the Haram, featuring the world's largest clock face, an astronomy museum, and multi-level shopping centers.",
       whyFamous: "One of the tallest buildings in the world, providing unmatched panoramic views over the holy sanctuary.",
       visitorTips: "Visit the Clock Tower Museum on the top floors for astronomical exhibits and sky deck views.",
@@ -76,7 +76,7 @@ export const meccaData: City = {
     },
     {
       name: "Jabal Al Noor (Mountain of Light)",
-      image: "",
+      image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jabal_al-Nour.jpg",
       description: "A prominent 642-meter mountain located 5 km northeast of central Mecca, containing stone stairs leading to its historic summit.",
       whyFamous: "Houses the Cave of Hira near its peak where the Prophet Muhammad spent solitary retreats.",
       visitorTips: "Start climbing before dawn to beat the mid-day heat and wear sturdy hiking shoes.",
@@ -86,7 +86,7 @@ export const meccaData: City = {
     },
     {
       name: "Cave of Hira",
-      image: "",
+      image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Hira_cave.jpg",
       description: "The small natural cave entrance near the summit of Jabal Al Noor overlooking the Mecca valley below.",
       whyFamous: "The sacred site where Archangel Gabriel revealed the very first Quranic verses to Prophet Muhammad.",
       visitorTips: "Exercise care on the steep upper stone steps near the summit.",
@@ -106,7 +106,7 @@ export const meccaData: City = {
     },
     {
       name: "Mina Valley (City of Tents)",
-      image: "",
+      image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Mina_tents.jpg",
       description: "A spacious valley located 8 km east of Mecca filled with over 100,000 air-conditioned, fireproof tent structures.",
       whyFamous: "Houses millions of pilgrims during the days of Hajj and contains the Jamarat stoning ritual bridge.",
       visitorTips: "Accessible by bus or metro train during the Hajj season.",
@@ -116,7 +116,7 @@ export const meccaData: City = {
     },
     {
       name: "Muzdalifah",
-      image: "",
+      image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Muzdalifah_pilgrims.jpg",
       description: "An open, level desert plain situated between Mina and Mount Arafat.",
       whyFamous: "Pilgrims spend the night under the open sky here during Hajj and gather pebbles for the Jamarat.",
       visitorTips: "Visited primarily during the 9th night of Dhul Hijjah as part of Hajj rites.",
@@ -126,7 +126,7 @@ export const meccaData: City = {
     },
     {
       name: "Mount Arafat (Jabal al-Rahmah)",
-      image: "",
+      image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Mount_Arafat.jpg",
       description: "A granite hill of mercy rising 70 meters high, located on the plain of Arafat 20 km east of Mecca.",
       whyFamous: "Site where Prophet Muhammad delivered his Farewell Sermon; standing at Arafat is the core pillar of Hajj.",
       visitorTips: "Visit the pillar marker at the top of the granite hill for panoramic valley views.",

@@ -215,7 +215,7 @@ export default async function CityGuidePage({ params }: Props) {
               </h2>
               <div className="grid grid-cols-1 gap-8">
                 {city.attractions.map((attraction, index) => (
-                  attraction.image ? (
+                  (attraction.image && attraction.image.trim() !== "") ? (
                     <div
                       key={index}
                       className="flex flex-col sm:flex-row gap-6 p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
@@ -345,14 +345,16 @@ export default async function CityGuidePage({ params }: Props) {
                     key={index}
                     className="rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col"
                   >
-                    <div className="h-48 relative">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={dish.image}
-                        alt={dish.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    {(dish.image && dish.image.trim() !== "") && (
+                      <div className="h-48 relative">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={dish.image}
+                          alt={dish.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
                     <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                       <div className="space-y-2">
                         <h3 className="text-lg font-bold text-slate-900 dark:text-white">
@@ -382,7 +384,7 @@ export default async function CityGuidePage({ params }: Props) {
                     key={index}
                     className="rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 flex flex-col justify-between"
                   >
-                    {stay.image && (
+                    {(stay.image && stay.image.trim() !== "") && (
                       <div className="h-44 relative overflow-hidden">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
