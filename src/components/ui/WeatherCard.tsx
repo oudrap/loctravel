@@ -47,7 +47,7 @@ export default function WeatherCard({
         {/* Main Weather Display */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
           <div className="flex items-center gap-4">
-            {weather.icon ? (
+            {weather.icon && weather.icon.trim() !== "" ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={weather.icon}

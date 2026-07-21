@@ -91,12 +91,14 @@ export default function DestinationsPage() {
               className="group bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={city.heroImage}
-                  alt={city.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                {city.heroImage && city.heroImage.trim() !== "" && (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={city.heroImage}
+                    alt={city.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/70 backdrop-blur-md text-white border border-white/5">
                   {city.region}
                 </span>

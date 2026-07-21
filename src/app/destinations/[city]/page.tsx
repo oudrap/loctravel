@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       title: city.seoTitle,
       description: city.seoDescription,
-      images: [{ url: city.heroImage, width: 1200, height: 630, alt: city.name }],
+      images: city.heroImage && city.heroImage.trim() !== "" ? [{ url: city.heroImage, width: 1200, height: 630, alt: city.name }] : [],
     },
   };
 }
@@ -94,12 +94,14 @@ export default async function CityGuidePage({ params }: Props) {
       {/* 1. Hero Section */}
       <section className="relative h-[65vh] min-h-[450px] bg-slate-950 flex items-end">
         <div className="absolute inset-0 overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={city.heroImage}
-            alt={city.name}
-            className="w-full h-full object-cover opacity-60"
-          />
+          {(city.heroImage && city.heroImage.trim() !== "") && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={city.heroImage}
+              alt={city.name}
+              className="w-full h-full object-cover opacity-60"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
         </div>
 
@@ -433,7 +435,7 @@ export default async function CityGuidePage({ params }: Props) {
                     key={index}
                     className="rounded-3xl overflow-hidden bg-slate-900 text-white border border-slate-800 space-y-3 flex flex-col justify-between"
                   >
-                    {restaurant.image && (
+                    {(restaurant.image && restaurant.image.trim() !== "") && (
                       <div className="h-44 relative overflow-hidden">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -476,7 +478,7 @@ export default async function CityGuidePage({ params }: Props) {
                     key={index}
                     className="rounded-3xl overflow-hidden bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3 flex flex-col justify-between"
                   >
-                    {option.image && (
+                    {(option.image && option.image.trim() !== "") && (
                       <div className="h-44 relative overflow-hidden">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -598,17 +600,19 @@ export default async function CityGuidePage({ params }: Props) {
                     key={index}
                     className="rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col"
                   >
-                    <div className="h-48 relative">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={gem.image}
-                        alt={gem.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <span className="absolute top-3 left-3 bg-emerald-500 text-slate-950 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
-                        Hidden Gem
-                      </span>
-                    </div>
+                    {(gem.image && gem.image.trim() !== "") && (
+                      <div className="h-48 relative">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={gem.image}
+                          alt={gem.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <span className="absolute top-3 left-3 bg-emerald-500 text-slate-950 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                          Hidden Gem
+                        </span>
+                      </div>
+                    )}
                     <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                       <div className="space-y-2">
                         <h3 className="text-lg font-bold text-slate-900 dark:text-white">
@@ -721,14 +725,16 @@ export default async function CityGuidePage({ params }: Props) {
                       href={`/destinations/${relCity.slug}`}
                       className="group flex items-center gap-4 p-2.5 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
                     >
-                      <div className="w-16 h-16 rounded-xl overflow-hidden relative shrink-0">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={relCity.heroImage}
-                          alt={relCity.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
+                      {(relCity.heroImage && relCity.heroImage.trim() !== "") && (
+                        <div className="w-16 h-16 rounded-xl overflow-hidden relative shrink-0">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={relCity.heroImage}
+                            alt={relCity.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                      )}
                       <div>
                         <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">
                           {relCity.name}

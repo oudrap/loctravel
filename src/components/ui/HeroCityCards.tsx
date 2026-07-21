@@ -93,7 +93,7 @@ export default function HeroCityCards({
           <span>🌤</span> Weather
         </span>
         <span className="font-bold text-white truncate pt-1 flex items-center gap-1.5">
-          {weatherIcon && (
+          {weatherIcon && weatherIcon.trim() !== "" && (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={weatherIcon} alt="" className="w-4 h-4 object-contain inline shrink-0" />
           )}
